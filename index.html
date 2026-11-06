@@ -2,8 +2,9 @@
 <html lang="id">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; connect-src https://script.google.com https://script.googleusercontent.com; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; connect-src https://script.google.com https://script.googleusercontent.com; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
+<script src="config.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SI LEMBUR YONASINDO</title>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -120,6 +121,35 @@ nav a em,.ct em{font-style:normal;background:var(--wait);color:#fff;border-radiu
 aside .x{display:none;background:#ffffff1f;color:#fff;border:0;border-radius:7px;padding:9px 12px;margin-bottom:12px;font-weight:600;cursor:pointer;width:100%;text-align:left}
 nav a.out{margin-top:10px;border-top:1px solid #ffffff22;border-radius:0 0 7px 7px;padding-top:12px}
 @media(max-width:860px){aside{height:100dvh;overflow-y:auto}aside .x{display:block}}
+
+.pw{position:relative}.pw input{padding-right:84px}.eye{position:absolute;right:5px;top:50%;transform:translateY(-50%);background:#e5eee1;color:var(--pine);border:0;border-radius:6px;padding:6px 10px;font-size:12.5px;font-weight:600;cursor:pointer}
+.hero{background:var(--pine);color:#e4efdf;border-radius:var(--r);padding:22px 26px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.hi{color:#b5ccb8;font-size:15px}.clk{font-size:clamp(36px,7vw,54px);font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1;color:#fff}.dt{color:#cfe0cc;margin-top:2px}
+.hq{display:flex;gap:8px;flex-wrap:wrap}.hero .btn{background:#e8f0e4;color:var(--pine)}.hero .btn.light{background:transparent;color:#fff;border:1px solid #ffffff66}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px}.lnk{color:var(--pine2);font-weight:600;font-size:13px;cursor:pointer}
+.an{padding:10px 0;border-bottom:1px solid var(--line)}.an:last-child{border:0}.an.big{padding:16px 0}.an p{white-space:pre-wrap;margin-top:8px;word-break:break-word}
+.cols{display:flex;gap:10px;align-items:flex-end;height:160px}.cols>div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;font-size:12px}
+.cols i{display:block;width:100%;max-width:46px;background:var(--pine2);border-radius:4px 4px 0 0;min-height:3px}.cols b{margin-bottom:3px}.cols span{color:var(--mute);margin-top:5px}
+.tabs{display:flex;gap:4px;border-bottom:2px solid var(--line);margin-bottom:14px}.tabs a{padding:8px 18px;cursor:pointer;font-weight:600;color:var(--mute);border-bottom:3px solid transparent;margin-bottom:-2px}.tabs a.on{color:var(--pine);border-color:var(--pine)}
+.tk{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:flex-start}.tk:last-child{border:0}.tk input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:var(--pine2)}
+.tk.done b{text-decoration:line-through;color:var(--mute)}.grow{flex:1;min-width:0}.meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:5px;font-size:12.5px;color:var(--mute)}.late{color:var(--no);font-weight:600}
+.tag.PRendah{background:#dbe6d6;color:#2b4a35}.tag.PSedang{background:#f6e8c8;color:#7a4e0c}.tag.PTinggi{background:#f2d4d4;color:#8a2b2b}
+.memos{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}.memo{background:#fffdf3;border:1px solid #e6dfb8;border-radius:8px;padding:14px;display:flex;flex-direction:column;gap:6px}.memo p{white-space:pre-wrap;font-size:14px;flex:1;word-break:break-word}
+.chat{display:grid;grid-template-columns:300px 1fr;height:min(640px,calc(100dvh - 160px));min-height:380px;background:var(--card);border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.clist{border-right:1px solid var(--line);padding:12px;overflow:auto;display:flex;flex-direction:column;gap:2px}.clist input{margin-bottom:8px}
+.ct{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:10px;cursor:pointer;margin:0}
+.ctx{flex:1;min-width:0}.ctx b{display:block;font-size:14px}.ctx small{display:block;color:var(--mute);font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.av{flex:none;width:38px;height:38px;border-radius:50%;display:inline-grid;place-items:center;font-weight:700;font-size:13px;color:#fff}
+.c0{background:#2b5d43}.c1{background:#8a6d2b}.c2{background:#3f7a6a}.c3{background:#7a5a3a}.c4{background:#4f6b2c}
+.cconv{display:flex;flex-direction:column;min-height:0;background:#eaf1e6}
+.chead{display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--card);border-bottom:1px solid var(--line)}.chead small{display:block;color:var(--mute);font-size:12px}
+#cm{flex:1;overflow-y:auto;padding:12px 16px;display:flex;flex-direction:column;gap:5px}#cm>:first-child{margin-top:auto}
+.msg{max-width:78%;padding:7px 12px 5px;border-radius:14px 14px 14px 4px;background:#fff;align-self:flex-start;word-break:break-word;box-shadow:0 1px 0 #0001}
+.msg.me{align-self:flex-end;border-radius:14px 14px 4px 14px;background:var(--pine2);color:#fff}.msg small{display:block;text-align:right;font-size:10.5px;opacity:.65;margin-top:1px}
+.dsep{text-align:center;margin:8px 0 4px}.dsep span{background:#d4e4cf;color:var(--mute);font-size:11.5px;padding:2px 10px;border-radius:99px}
+.cempty{margin:auto;text-align:center;color:var(--mute);display:flex;flex-direction:column;gap:4px;padding:20px}.cempty b{color:var(--ink)}
+.cform{display:flex;gap:8px;padding:10px 12px;background:var(--card);border-top:1px solid var(--line)}.cform input{border-radius:99px;padding:10px 16px}.cform .btn{border-radius:99px;padding:10px 22px}
+@media(max-width:860px){.g2{grid-template-columns:1fr}.hero{padding:18px}.chat{grid-template-columns:1fr;height:calc(100dvh - 120px)}.chat .cconv{display:none}.chat.open .cconv{display:flex}.chat.open .clist{display:none}.cback{display:block}.msg{max-width:86%}}
 </style>
 </head>
 <body>
@@ -134,7 +164,7 @@ nav a.out{margin-top:10px;border-top:1px solid #ffffff22;border-radius:0 0 7px 7
  <div class="l-right"><form class="box" onsubmit="return doLogin(event)">
   <h2>Masuk</h2><div class="note">Gunakan akun yang diberikan admin.</div>
   <label for="u">Username</label><input id="u" autocomplete="username" required>
-  <label for="p">Kata sandi</label><input id="p" type="password" autocomplete="current-password" required>
+  <label for="p">Kata sandi</label><div class="pw"><input id="p" type="password" autocomplete="current-password" required><button type="button" class="eye" onclick="togglePw('p',this)">Lihat</button></div>
   <div class="err" id="lerr"></div>
   <button class="btn full">Masuk</button>
   <div class="demo">Lupa kata sandi? Hubungi admin. Sesi berakhir otomatis jika tidak aktif 30 menit.</div>
@@ -157,10 +187,12 @@ nav a.out{margin-top:10px;border-top:1px solid #ffffff22;border-radius:0 0 7px 7
 <div id="mod" class="hide" onclick="if(event.target===this)closeM()"><div class="mbox" id="mbox"></div></div>
 
 <script>
-/* ============ KONFIGURASI ============
- Isi API_URL dengan URL Web App Google Apps Script (spreadsheet) agar data tersimpan online
- dan chat bisa dipakai lintas perangkat. Jika kosong, data hanya tersimpan di browser ini (mode demo). */
-const API_URL = 'https://script.google.com/macros/s/AKfycbyuPgCQbmmiWYgl5p9Pn8VweCHKpq4097QWAAfz8wMkWi3m8zQKhTVpoLqqSKY2JkrT/exec';
+/* Alamat server diisi di file config.js (cukup sekali, tidak ikut berubah saat aplikasi diperbarui) */
+const API_URL=(window.APP_CONFIG&&window.APP_CONFIG.API_URL)||'';
+const WIB={timeZone:'Asia/Jakarta'};
+const today=()=>new Date().toLocaleDateString('en-CA',WIB);
+const wkt=t=>new Date(t).toLocaleDateString('id-ID',{...WIB,day:'numeric',month:'short',year:'numeric'});
+const hm=t=>new Date(t).toLocaleTimeString('en-GB',{...WIB,hour:'2-digit',minute:'2-digit',hour12:false});
 
 const $=(s)=>document.querySelector(s);
 const tgl=d=>new Date(d+'T00:00').toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
@@ -197,13 +229,13 @@ async function api(action,p={}){let t;
  try{t=await (await fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({...p,action,token:TOKEN})})).text()}catch(e){return{ok:false,error:'Tidak bisa menghubungi server. Periksa koneksi internet dan API_URL.'}}
  let x;try{x=JSON.parse(t)}catch(e){return{ok:false,error:'Server tidak mengembalikan data. Pastikan URL berakhiran /exec dan akses deployment "Anyone".'}}
  if(x.auth&&ME){ME=null;toast('Sesi berakhir, silakan login ulang');setTimeout(logout,1200)}return x}
-async function refresh(){const x=await api('data');if(!x.ok)return x.error||'Gagal memuat data.';DB=x;ME=x.me;return ''}
+async function refresh(){const x=await api('data');if(!x.ok)return x.error||'Gagal memuat data.';x.pengumuman=x.pengumuman||[];x.catatan=x.catatan||[];DB=x;ME=x.me;return ''}
 async function act(action,p,msg){const x=await api(action,p);if(!x.ok){toast(x.error||'Gagal');return false}const m=await refresh();if(m){toast(m);return false}if(msg)toast(msg);return true}
 const RL={admin:'Administrator',kadiv:'Kepala Divisi',karyawan:'Karyawan'};
 const MENU={
- admin:[['dash','Dashboard'],['lembur','Semua Lembur'],['users','Kelola User'],['divisi','Divisi & Persetujuan'],['laporan','Rekap Jam Lembur'],['chat','Chat'],['set','Pengaturan'],['profil','Profil Saya']],
- kadiv:[['dash','Dashboard'],['approve','Persetujuan Lembur'],['riwayat','Riwayat Lembur'],['tim','Rekap Jam Pegawai'],['chat','Chat'],['profil','Profil Saya']],
- karyawan:[['dash','Dashboard'],['ajukan','Ajukan Lembur'],['saya','Riwayat Lembur'],['chat','Chat'],['profil','Profil Saya']]};
+ admin:[['dash','Dashboard'],['info','Pengumuman'],['lembur','Semua Lembur'],['users','Kelola User'],['divisi','Divisi & Persetujuan'],['laporan','Rekap Jam Lembur'],['catatan','Catatan Kerja'],['chat','Chat'],['set','Pengaturan'],['profil','Profil Saya']],
+ kadiv:[['dash','Dashboard'],['info','Pengumuman'],['approve','Persetujuan Lembur'],['riwayat','Riwayat Lembur'],['tim','Rekap Jam Pegawai'],['catatan','Catatan Kerja'],['chat','Chat'],['profil','Profil Saya']],
+ karyawan:[['dash','Dashboard'],['info','Pengumuman'],['ajukan','Ajukan Lembur'],['saya','Riwayat Lembur'],['catatan','Catatan Kerja'],['chat','Chat'],['profil','Profil Saya']]};
 function start(){$('#login').classList.add('hide');$('#app').classList.remove('hide');
  $('#role').textContent=RL[ME.role]+(ME.role!=='admin'?' · '+ME.divisi:'');
  $('#mn').textContent=ME.nama;$('#md').textContent='@'+ME.username;go('dash')}
@@ -211,7 +243,7 @@ const navHtml=p=>MENU[ME.role].map(m=>`<a class="${m[0]===p?'on':''}" onclick="g
 function menu(o){$('#side').classList.toggle('open',o);$('#ov').classList.toggle('show',o)}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')menu(false)});
 function go(p){PAGE=p;menu(false);$('#nav').innerHTML=navHtml(p);$('#title').textContent=MENU[ME.role].find(m=>m[0]===p)[1];$('#sub').textContent='';
- $('#view').innerHTML=(V[p]||V.dash)();if(PG[p])fill();if(p==='chat'){clist();cmsg()}window.scrollTo(0,0)}
+ $('#view').innerHTML=(V[p]||V.dash)();if(PG[p])fill();if(p==='catatan')catFill();if(p==='dash')clock();if(p==='chat'){clist();cmsg()}window.scrollTo(0,0)}
 
 /* ---------- helper ---------- */
 const U=id=>DB.users.find(u=>u.id===id)||{nama:'(dihapus)',divisi:'-'};
@@ -276,14 +308,18 @@ function csv(){const a=scope(),r=[['Karyawan','Divisi','Tanggal','Mulai','Selesa
 
 /* ---------- halaman ---------- */
 const V={
-dash(){const a=scope();$('#sub').textContent='Halo, '+ME.nama.split(' ')[0]+'. Ringkasan lembur '+(ME.role==='admin'?'seluruh perusahaan':ME.role==='kadiv'?'divisi '+grupOf(ME.divisi).join(', '):'Anda')+'.';
- let h=stats(a);
+dash(){const a=scope(),pe=DB.pengumuman.slice().sort((x,y)=>y.ts-x.ts).slice(0,3),tg=DB.catatan.filter(c=>c.tipe==='tugas'&&c.status!=='Selesai').sort(cmpT).slice(0,4);
+ $('#sub').textContent=ME.role==='admin'?'Seluruh perusahaan':ME.role==='kadiv'?'Divisi '+grupOf(ME.divisi).join(', '):'Divisi '+ME.divisi;
+ const wait=a.filter(l=>l.status==='Menunggu').length;
+ const q=ME.role==='karyawan'?`<button class="btn" onclick="go('ajukan')">Ajukan lembur</button>`:ME.role==='kadiv'?`<button class="btn" onclick="go('approve')">Persetujuan${wait?' ('+wait+')':''}</button>`:`<button class="btn" onclick="go('users')">Kelola user</button>`;
+ let h=`<div class="hero"><div><div class="hi">${sapa()}, ${esc(ME.nama.split(' ')[0])}</div><div class="clk" id="clk">--:--:--</div><div class="dt"><span id="dt"></span> · WIB</div></div><div class="hq">${q}<button class="btn light" onclick="go('catatan')">Catatan kerja</button></div></div>`+stats(a);
+ h+=`<div class="g2"><div class="card"><div class="bar"><h3 class="grow" style="margin:0">Pengumuman terbaru</h3><a class="lnk" onclick="go('info')">Lihat semua</a></div>${pe.length?pe.map(p=>`<div class="an"><b>${esc(p.judul)}</b><div class="note">${esc(U(p.by).nama)} · ${wkt(p.ts)}</div><div>${esc(p.isi.slice(0,110))}${p.isi.length>110?'…':''}</div></div>`).join(''):'<div class="empty">Belum ada pengumuman.</div>'}</div>
+ <div class="card"><div class="bar"><h3 class="grow" style="margin:0">Tugas saya</h3><a class="lnk" onclick="CT='tugas';go('catatan')">Buka catatan</a></div>${tg.length?tg.map(c=>`<div class="an"><b>${esc(c.judul)}</b><div class="meta"><span class="tag P${c.prioritas}">${c.prioritas}</span>${c.tenggat?`<span class="${c.tenggat<today()?'late':''}">Tenggat ${tgl(c.tenggat)}</span>`:''}</div></div>`).join(''):'<div class="empty">Tidak ada tugas yang menunggu.</div>'}</div></div>`;
  if(ME.role==='kadiv'){const p=a.filter(l=>l.status==='Menunggu');h+=`<div class="card"><h3>Menunggu keputusan Anda (${p.length})</h3>${tbl([...HA,'Aksi'],p.map(l=>lrow(l,'act')),'Tidak ada pengajuan yang menunggu.')}</div>`}
- if(ME.role==='karyawan')h+=`<div class="card"><div class="bar"><h3 class="grow" style="margin:0">Pengajuan terakhir</h3><button class="btn" onclick="go('ajukan')">Ajukan lembur</button></div>${tbl(HM,a.slice(0,5).map(l=>lrow(l,'mine')),'Anda belum pernah mengajukan lembur.')}</div>`;
+ if(ME.role==='karyawan')h+=`<div class="card"><div class="bar"><h3 class="grow" style="margin:0">Pengajuan terakhir</h3><button class="btn ghost sm" onclick="go('saya')">Semua riwayat</button></div>${tbl(HM,a.slice(0,5).map(l=>lrow(l,'mine')),'Anda belum pernah mengajukan lembur.')}</div>`;
  if(ME.role==='admin'){const m=DIVS.map(d=>[d,sum(a.filter(l=>l.status==='Disetujui'&&U(l.uid).divisi===d))]),mx=Math.max(1,...m.map(x=>x[1]));
-  h+=`<div class="card"><h3>Jam lembur disetujui per divisi</h3>${m.map(x=>`<div class="hbar"><b>${x[0]}</b><i style="width:${x[1]/mx*60}%"></i>${x[1]} jam</div>`).join('')}</div>
-  <div class="card"><h3>Pengajuan terbaru</h3>${tbl([...HA,'Status'],a.slice(0,5).map(l=>lrow(l,'all')))}</div>`}
- return h},
+  h+=`<div class="card"><h3>Jam lembur disetujui per divisi</h3>${m.map(x=>`<div class="hbar"><b>${x[0]}</b><i style="width:${x[1]/mx*60}%"></i>${x[1]} jam</div>`).join('')}</div>`}
+ return h+`<div class="card"><h3>Jam lembur disetujui, 6 bulan terakhir</h3>${mini6()}</div>`},
 ajukan(){$('#sub').textContent='Maksimal '+DB.set.maxJam+' jam per hari. Jam memakai format 24 jam.';
  const ts=(id,h,m)=>`<div class="tsel"><select id="${id}h" aria-label="Jam">${[...Array(24).keys()].map(n=>{n=String(n).padStart(2,'0');return`<option ${n===h?'selected':''}>${n}</option>`}).join('')}</select><span>:</span><select id="${id}m" aria-label="Menit">${['00','15','30','45'].map(n=>`<option ${n===m?'selected':''}>${n}</option>`).join('')}</select></div>`;
  return`<div class="card" style="max-width:560px"><form onsubmit="return submitL(event)">
@@ -300,7 +336,7 @@ divisi(){const rows=DIVS.map(d=>{const g=grupOf(d),k=DB.users.find(u=>u.role==='
 set(){return`<div class="card" style="max-width:560px"><h3>Aturan lembur</h3><form onsubmit="return saveSet(event)">
  <label for="sm">Batas jam lembur per hari</label><input type="number" id="sm" value="${DB.set.maxJam}" min="1" step="0.5" required>
  <button class="btn" style="margin-top:18px">Simpan pengaturan</button></form></div>
- <div class="card" style="max-width:560px"><h3>Koneksi Google Spreadsheet</h3><p class="note" style="margin:0">Status: <b>${API_URL?'Terhubung':'Belum terhubung (data tersimpan di browser ini)'}</b>. Isi konstanta <code>API_URL</code> di bagian atas script file ini dengan URL Web App Apps Script.</p></div>`},
+ <div class="card" style="max-width:560px"><h3>Koneksi Google Spreadsheet</h3><p class="note" style="margin:0">Status: <b>${API_URL?'Terhubung':'Belum terhubung (data tersimpan di browser ini)'}</b>. Alamat server diatur di file <code>config.js</code>.</p></div>`},
 profil(){const x=ME,ro=(l,v)=>`<div><label>${l}</label><input value="${esc(v)}" disabled></div>`;
  return`<div class="card" style="max-width:600px"><h3>Data profil</h3><form onsubmit="return saveProfil(event)"><div class="grid2">
  ${ro('Nama',x.nama)}<div><label for="pl">Tanggal lahir</label><input type="date" id="pl" value="${x.lahir||''}"></div>
@@ -308,25 +344,36 @@ profil(){const x=ME,ro=(l,v)=>`<div><label>${l}</label><input value="${esc(v)}" 
  ${ro('Divisi',x.divisi)}${ro('Tahun masuk Yonasindo',x.masuk||'')}</div>
  <div class="note">Nama, divisi, dan tahun masuk diubah oleh admin. Kata sandi juga hanya dapat diubah oleh admin.</div>
  <button class="btn" style="margin-top:16px">Simpan profil</button></form></div>`},
+info(){const can=ME.role!=='karyawan',ps=DB.pengumuman.slice().sort((x,y)=>y.ts-x.ts);
+ $('#sub').textContent=can?'Anda dapat membuat pengumuman untuk pegawai.':'Informasi dari admin dan kepala divisi.';
+ return`<div class="card">${can?'<div class="bar"><span class="grow note">Pengumuman muncul di dashboard pegawai yang dituju.</span><button class="btn" onclick="infoForm()">+ Buat pengumuman</button></div>':''}${ps.length?ps.map(p=>`<article class="an big"><div class="bar" style="margin:0"><b class="grow">${esc(p.judul)}</b>${can&&(ME.role==='admin'||p.by===ME.id)?`<button class="btn sm ghost" onclick="delInfo(${p.id})">Hapus</button>`:''}</div><div class="note">${esc(U(p.by).nama)} · ${wkt(p.ts)} · Untuk: ${tgtL(p.target)}</div><p>${esc(p.isi)}</p></article>`).join(''):'<div class="empty">Belum ada pengumuman.</div>'}</div>`},
+catatan(){$('#sub').textContent='Catatan pribadi, hanya Anda yang bisa melihatnya.';
+ return`<div class="card"><div class="tabs"><a class="${CT==='tugas'?'on':''}" onclick="CT='tugas';go('catatan')">Tugas</a><a class="${CT==='memo'?'on':''}" onclick="CT='memo';go('catatan')">Memo</a></div>
+ <div class="bar"><input id="cqq" type="search" placeholder="Cari catatan…" oninput="catFill()">${CT==='tugas'?'<select id="cqs" onchange="catFill()"><option value="">Semua tugas</option><option value="open">Belum selesai</option><option value="done">Selesai</option></select>':''}<span class="grow"></span><button class="btn" onclick="catForm(0)">+ Tambah ${CT}</button></div><div id="cat"></div></div>`},
 chat(){$('#sub').textContent='Kirim pesan ke siapa saja di Yonasindo.';
  return`<div class="chat ${PEER?'open':''}" id="chat"><div class="clist"><input id="cq" type="search" placeholder="Cari nama…" oninput="clist()"><div id="cl"></div></div>
- <div class="cconv"><div class="chead"><button class="btn sm ghost cback" onclick="PEER=null;go('chat')" aria-label="Kembali">‹</button><b id="cn">Pilih kontak</b></div><div id="cm"></div>
- <form class="cform" onsubmit="return send(event)"><input id="ct" placeholder="Tulis pesan…" autocomplete="off"><button class="btn">Kirim</button></form></div></div>`}
+ <div class="cconv"><div class="chead"><button class="btn sm ghost cback" onclick="PEER=null;go('chat')" aria-label="Kembali">‹</button><span id="cav"></span><div><b id="cn">Pilih kontak</b><small id="cr"></small></div></div><div id="cm"></div>
+ <form class="cform" onsubmit="return send(event)"><input id="ct" placeholder="Tulis pesan…" autocomplete="off" maxlength="1000"><button class="btn">Kirim</button></form></div></div>`}
 };
 
 /* ---------- chat ---------- */
 const unread=()=>(DB.chat||[]).filter(c=>c.to===ME.id&&!c.r).length;
-function clist(){const q=($('#cq')?.value||'').toLowerCase(),last=id=>Math.max(0,...DB.chat.filter(c=>(c.from===id&&c.to===ME.id)||(c.to===id&&c.from===ME.id)).map(c=>c.ts));
- const us=DB.users.filter(u=>u.id!==ME.id&&u.nama.toLowerCase().includes(q)).sort((a,b)=>last(b.id)-last(a.id)||a.nama.localeCompare(b.nama));
- $('#cl').innerHTML=us.map(u=>{const n=DB.chat.filter(c=>c.from===u.id&&c.to===ME.id&&!c.r).length;
-  return`<a class="ct ${u.id===PEER?'on':''}" onclick="openChat(${u.id})"><span><b>${esc(u.nama)}</b><small>${RL[u.role]}${u.divisi!=='-'?' · '+u.divisi:''}</small></span>${n?`<em>${n}</em>`:''}</a>`}).join('')||'<div class="empty">Tidak ditemukan.</div>'}
+const ini=n=>String(n).split(/\s+/).slice(0,2).map(w=>w[0]||'').join('').toUpperCase();
+const av=u=>`<span class="av c${(u.id||0)%5}">${esc(ini(u.nama))}</span>`;
+const dayL=d=>d===today()?'Hari ini':d===new Date(Date.now()-864e5).toLocaleDateString('en-CA',WIB)?'Kemarin':tgl(d);
+function clist(){const q=($('#cq')?.value||'').toLowerCase(),msgs=id=>DB.chat.filter(c=>(c.from===id&&c.to===ME.id)||(c.to===id&&c.from===ME.id)),lt=m=>Math.max(0,...m.map(c=>c.ts));
+ const us=DB.users.filter(u=>u.id!==ME.id&&u.nama.toLowerCase().includes(q)).map(u=>({u,m:msgs(u.id)})).sort((x,y)=>lt(y.m)-lt(x.m)||x.u.nama.localeCompare(y.u.nama));
+ $('#cl').innerHTML=us.map(({u,m})=>{const l=m.slice().sort((x,y)=>x.ts-y.ts).pop(),n=m.filter(c=>c.from===u.id&&!c.r).length;
+  return`<a class="ct ${u.id===PEER?'on':''}" onclick="openChat(${u.id})">${av(u)}<span class="ctx"><b>${esc(u.nama)}</b><small>${l?(l.from===ME.id?'Anda: ':'')+esc(l.text.slice(0,36)):RL[u.role]+(u.divisi!=='-'?' · '+u.divisi:'')}</small></span>${n?`<em>${n}</em>`:''}</a>`}).join('')||'<div class="empty">Tidak ditemukan.</div>'}
 async function openChat(id){PEER=id;$('#chat').classList.add('open');
  if(DB.chat.some(c=>c.from===id&&c.to===ME.id&&!c.r))await act('read',{peer:id});
  clist();cmsg();$('#nav').innerHTML=navHtml('chat')}
-function cmsg(){const box=$('#cm');if(!PEER){box.dataset.k='';box.innerHTML='<div class="empty">Pilih kontak di sebelah kiri untuk mulai chat.</div>';return}
- $('#cn').textContent=U(PEER).nama;const key=PEER+':'+DB.chat.length+':'+DB.chat.filter(c=>c.r).length;if(box.dataset.k===key)return;box.dataset.k=key;
- const ms=DB.chat.filter(c=>(c.from===ME.id&&c.to===PEER)||(c.from===PEER&&c.to===ME.id)).sort((a,b)=>a.ts-b.ts);
- box.innerHTML=ms.map(c=>`<div class="msg ${c.from===ME.id?'me':''}">${esc(c.text)}<small>${new Date(c.ts).toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit',hour12:false})}</small></div>`).join('')||'<div class="empty">Belum ada pesan. Sapa duluan.</div>';
+function cmsg(){const box=$('#cm');
+ if(!PEER){box.dataset.k='';$('#cn').textContent='Pilih kontak';$('#cr').textContent='';$('#cav').innerHTML='';box.innerHTML='<div class="cempty"><b>Belum ada percakapan dipilih</b><span>Pilih nama di daftar untuk mulai mengobrol.</span></div>';return}
+ const u=U(PEER);$('#cn').textContent=u.nama;$('#cr').textContent=(RL[u.role]||'')+(u.divisi&&u.divisi!=='-'?' · '+u.divisi:'');$('#cav').innerHTML=av(u);
+ const ms=DB.chat.filter(c=>(c.from===ME.id&&c.to===PEER)||(c.from===PEER&&c.to===ME.id)).sort((x,y)=>x.ts-y.ts);
+ const key=PEER+':'+ms.length+':'+ms.filter(c=>c.r).length;if(box.dataset.k===key)return;box.dataset.k=key;let last='';
+ box.innerHTML=ms.map(c=>{const d=new Date(c.ts).toLocaleDateString('en-CA',WIB),sep=d!==last?`<div class="dsep"><span>${dayL(d)}</span></div>`:'';last=d;return sep+`<div class="msg ${c.from===ME.id?'me':''}">${esc(c.text)}<small>${hm(c.ts)}</small></div>`}).join('')||'<div class="cempty"><b>Belum ada pesan</b><span>Sapa duluan.</span></div>';
  box.scrollTop=box.scrollHeight}
 async function send(e){e.preventDefault();const t=$('#ct').value.trim();if(!t||!PEER)return false;$('#ct').value='';
  if(await act('chat',{to:PEER,text:t})){clist();cmsg()}return false}
@@ -335,7 +382,7 @@ async function tick(){if(!ME)return;
  if(document.hidden||!$('#mod').classList.contains('hide'))return;
  if(await refresh())return;
  $('#nav').innerHTML=navHtml(PAGE);
- if(PG[PAGE])fill();else if(PAGE==='chat'){clist();cmsg()}else if(PAGE==='dash'||PAGE==='divisi')$('#view').innerHTML=V[PAGE]()}
+ if(PG[PAGE])fill();else if(PAGE==='chat'){clist();cmsg()}else if(PAGE==='catatan')catFill();else if(['dash','divisi','info'].includes(PAGE)){$('#view').innerHTML=V[PAGE]();if(PAGE==='dash')clock()}}
 setInterval(tick,8000);
 
 /* ---------- aksi form ---------- */
@@ -346,7 +393,7 @@ async function submitL(e){e.preventDefault();
 function userForm(id){const u=DB.users.find(x=>x.id===id)||{nama:'',username:'',pass:'',role:'karyawan',divisi:DIVS[0],lahir:'',email:'',hp:'',masuk:new Date().getFullYear()};
  openM(`<h3>${id?'Ubah user':'Tambah user'}</h3><form onsubmit="return saveU(event,${id||0})"><div class="grid2">
  <div><label>Nama lengkap</label><input id="fn" value="${esc(u.nama)}" required></div><div><label>Username</label><input id="fu" value="${esc(u.username)}" required></div>
- <div><label>Kata sandi${id?' (kosongkan jika tidak diubah)':''}</label><input id="fp" type="password" autocomplete="new-password" ${id?'':'required'} minlength="8" placeholder="Min. 8, huruf &amp; angka"></div>
+ <div><label>Kata sandi${id?' (kosongkan jika tidak diubah)':''}</label><div class="pw"><input id="fp" type="password" autocomplete="new-password" ${id?'':'required'} minlength="8" placeholder="Min. 8, huruf &amp; angka"><button type="button" class="eye" onclick="togglePw('fp',this)">Lihat</button></div></div>
  <div><label>Peran</label><select id="fr">${Object.entries(RL).map(([k,v])=>`<option value="${k}" ${k===u.role?'selected':''}>${v}</option>`).join('')}</select></div>
  <div><label>Divisi</label><select id="fv">${opt(['-',...DIVS],u.divisi)}</select></div>
  <div><label>Tahun masuk</label><input id="fy" type="number" min="1990" max="2100" value="${u.masuk||''}"></div>
@@ -359,6 +406,48 @@ async function saveU(e,id){e.preventDefault();
 async function delU(id){if(!confirm('Hapus user ini beserta data lemburnya?'))return;if(await act('deleteUser',{id},'User dihapus'))go('users')}
 async function saveSet(e){e.preventDefault();await act('saveSettings',{maxJam:$('#sm').value},'Pengaturan disimpan');return false}
 async function saveProfil(e){e.preventDefault();await act('saveProfil',{lahir:$('#pl').value,email:$('#pe').value.trim(),hp:$('#ph').value.trim()},'Profil disimpan');return false}
+
+/* ---------- jam, sapaan, grafik ---------- */
+function clock(){const c=$('#clk');if(!c)return;const n=new Date();c.textContent=n.toLocaleTimeString('en-GB',{...WIB,hour12:false});$('#dt').textContent=n.toLocaleDateString('id-ID',{...WIB,weekday:'long',day:'numeric',month:'long',year:'numeric'})}
+setInterval(clock,1000);
+const sapa=()=>{const h=parseInt(new Date().toLocaleString('en-GB',{...WIB,hour:'2-digit',hour12:false}),10);return h<11?'Selamat pagi':h<15?'Selamat siang':h<18?'Selamat sore':'Selamat malam'};
+function mini6(){const a=scope().filter(l=>l.status==='Disetujui'),ms=[];
+ for(let i=5;i>=0;i--){const d=new Date();d.setDate(1);d.setMonth(d.getMonth()-i);ms.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'))}
+ const v=ms.map(m=>sum(a.filter(l=>l.tgl.slice(0,7)===m))),mx=Math.max(1,...v);
+ return`<div class="cols">${ms.map((m,i)=>`<div><b>${v[i]}</b><i style="height:${Math.round(v[i]/mx*100)}px"></i><span>${new Date(m+'-01T00:00').toLocaleDateString('id-ID',{month:'short'})}</span></div>`).join('')}</div>`}
+function togglePw(id,b){const i=$('#'+id),s=i.type==='password';i.type=s?'text':'password';b.textContent=s?'Sembunyi':'Lihat'}
+
+/* ---------- pengumuman ---------- */
+const tgtL=t=>t==='semua'?'Semua karyawan':'Kelompok '+t.slice(1)+' ('+(GRUP[+t.slice(1)-1]||[]).join(', ')+')';
+function infoForm(){openM(`<h3>Buat pengumuman</h3><form onsubmit="return saveInfo(event)">
+ <label for="ij">Judul</label><input id="ij" maxlength="80" required>
+ <label for="ii">Isi pengumuman</label><textarea id="ii" maxlength="1500" required style="min-height:120px"></textarea>
+ ${ME.role==='admin'?`<label for="it">Ditujukan untuk</label><select id="it"><option value="semua">Semua karyawan</option><option value="k1">Kelompok 1 (${GRUP[0].join(', ')})</option><option value="k2">Kelompok 2 (${GRUP[1].join(', ')})</option></select>`:`<div class="note">Pengumuman ini dikirim ke seluruh pegawai divisi: ${esc(grupOf(ME.divisi).join(', '))}.</div>`}
+ <div class="mact"><button type="button" class="btn ghost" onclick="closeM()">Batal</button><button class="btn">Terbitkan</button></div></form>`)}
+async function saveInfo(e){e.preventDefault();if(await act('addPengumuman',{judul:$('#ij').value.trim(),isi:$('#ii').value.trim(),target:ME.role==='admin'?$('#it').value:''},'Pengumuman terbit')){closeM();go('info')}return false}
+async function delInfo(id){if(!confirm('Hapus pengumuman ini?'))return;if(await act('delPengumuman',{id},'Pengumuman dihapus'))go('info')}
+
+/* ---------- catatan kerja ---------- */
+let CT='tugas';
+const cmpT=(a,b)=>(a.tenggat||'9')<(b.tenggat||'9')?-1:(a.tenggat||'9')>(b.tenggat||'9')?1:0;
+function catFill(){const q=($('#cqq')?.value||'').toLowerCase(),st=$('#cqs')?.value||'',t=today(),box=$('#cat');if(!box)return;
+ let a=DB.catatan.filter(c=>c.tipe===CT&&(!q||(c.judul+' '+c.isi).toLowerCase().includes(q)));
+ if(CT==='tugas'){if(st==='open')a=a.filter(c=>c.status!=='Selesai');if(st==='done')a=a.filter(c=>c.status==='Selesai');a.sort((x,y)=>(x.status==='Selesai')-(y.status==='Selesai')||cmpT(x,y))}else a.sort((x,y)=>y.ts-x.ts);
+ const ac=c=>`<div class="acts"><button class="btn sm ghost" onclick="catForm(${c.id})">Ubah</button><button class="btn sm ghost" onclick="delCat(${c.id})">Hapus</button></div>`;
+ if(!a.length){box.innerHTML=`<div class="empty">${CT==='tugas'?'Belum ada tugas. Catat pekerjaan yang harus diselesaikan.':'Belum ada memo. Tulis catatan singkat pekerjaan Anda.'}</div>`;return}
+ box.innerHTML=CT==='tugas'?a.map(c=>{const dn=c.status==='Selesai',late=c.tenggat&&c.tenggat<t&&!dn;
+  return`<div class="tk ${dn?'done':''}"><input type="checkbox" ${dn?'checked':''} onchange="togCat(${c.id})" aria-label="Tandai selesai"><div class="grow"><b>${esc(c.judul)}</b>${c.isi?`<div class="note">${esc(c.isi)}</div>`:''}<div class="meta"><span class="tag P${c.prioritas}">${c.prioritas}</span>${c.status==='Proses'?'<span class="tag Menunggu">Proses</span>':''}${c.tenggat?`<span class="${late?'late':''}">Tenggat ${tgl(c.tenggat)}${late?' (terlambat)':''}</span>`:''}</div></div>${ac(c)}</div>`}).join('')
+  :`<div class="memos">${a.map(c=>`<div class="memo"><b>${esc(c.judul)}</b><p>${esc(c.isi)}</p><div class="note">${wkt(c.ts)}</div>${ac(c)}</div>`).join('')}</div>`}
+function catForm(id){const c=DB.catatan.find(x=>x.id===id)||{judul:'',isi:'',prioritas:'Sedang',tenggat:'',status:'Baru'},tg=CT==='tugas';
+ openM(`<h3>${id?'Ubah':'Tambah'} ${CT}</h3><form onsubmit="return saveCat(event,${id})">
+ <label for="cj">Judul</label><input id="cj" maxlength="80" value="${esc(c.judul)}" required>
+ <label for="ci">${tg?'Keterangan (opsional)':'Isi memo'}</label><textarea id="ci" maxlength="2000" ${tg?'':'required'} style="min-height:${tg?76:140}px">${esc(c.isi)}</textarea>
+ ${tg?`<div class="grid2"><div><label for="cp">Prioritas</label><select id="cp">${opt(['Rendah','Sedang','Tinggi'],c.prioritas)}</select></div><div><label for="cs">Status</label><select id="cs">${opt(['Baru','Proses','Selesai'],c.status)}</select></div></div><label for="cd">Tenggat (opsional)</label><input type="date" id="cd" value="${c.tenggat||''}">`:''}
+ <div class="mact"><button type="button" class="btn ghost" onclick="closeM()">Batal</button><button class="btn">Simpan</button></div></form>`)}
+async function saveCat(e,id){e.preventDefault();const tg=CT==='tugas';
+ if(await act('saveCatatan',{id,tipe:CT,judul:$('#cj').value.trim(),isi:$('#ci').value.trim(),prioritas:tg?$('#cp').value:'Sedang',status:tg?$('#cs').value:'Baru',tenggat:tg?$('#cd').value:''},'Catatan disimpan')){closeM();catFill()}return false}
+async function togCat(id){const c=DB.catatan.find(x=>x.id===id);if(!c)return;await act('saveCatatan',{...c,status:c.status==='Selesai'?'Baru':'Selesai'});catFill()}
+async function delCat(id){if(!confirm('Hapus catatan ini?'))return;if(await act('delCatatan',{id},'Catatan dihapus'))catFill()}
 init();
 </script>
 </body>
