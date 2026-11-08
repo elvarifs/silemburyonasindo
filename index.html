@@ -9,11 +9,11 @@
 <script>try{var t=localStorage.getItem("yonas_theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SI LEMBUR YONASINDO</title>
-<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>:root{--bg:#d4e6d0;--sf:#fbfdf9;--sf2:#edf4e9;--ink:#13221a;--mute:#5b6f61;--line:#dbe7d7;--btn:#256b47;--btn2:#1d5a3b;--side:#16392a;--acc:#1f6b45;--g1:#2f8a5c;--g2:#8fd0a2;--wait:#9a6208;--ok:#23794b;--no:#b23b3b;--inp:#fff;--sh:0 1px 2px #0d261a14,0 10px 28px -14px #0d261a40;--h1:#17402c;--h2:#2b7a53;--r:16px;color-scheme:light}
 [data-theme=dark]{--bg:#0c1510;--sf:#15221a;--sf2:#1b2b21;--ink:#e5eee8;--mute:#92a89a;--line:#263a2e;--btn:#2f8a5c;--btn2:#3a9d6a;--side:#09110c;--acc:#7fd0a0;--g1:#3fa56f;--g2:#9ee0b4;--wait:#e3ab4f;--ok:#5ac58a;--no:#ef7b7b;--inp:#101b14;--sh:0 1px 2px #0006,0 10px 28px -14px #000a;--h1:#123022;--h2:#1f5a3d;color-scheme:dark}
 *{box-sizing:border-box;margin:0}html,body{height:100%}
-body{font-family:'Schibsted Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.5;transition:background .2s,color .2s}
+body{font-family:'Schibsted Grotesk','Noto Sans JP',system-ui,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.5;transition:background .2s,color .2s}
 button,input,select,textarea{font:inherit;color:inherit}:focus-visible{outline:2px solid var(--g1);outline-offset:2px}
 .hide{display:none!important}.grow{flex:1;min-width:0}.note{font-size:13px;color:var(--mute)}svg{flex:none}
 label{display:block;font-size:13px;font-weight:600;margin:14px 0 6px}
@@ -122,6 +122,20 @@ table.rs td{display:flex;justify-content:space-between;gap:14px;border:0;padding
 .cell.lib{background:color-mix(in srgb,var(--no) 10%,var(--sf2))}.cell.lib b,.cell.we b{color:var(--no)}.cell.td b{color:#fff!important}
 .cell small{display:block;font-size:10px;line-height:1.2;color:var(--no);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 @media(max-width:860px){.cell small{display:none}.l-right .wm{position:static;margin-top:22px}.l-right{align-content:center}}
+
+.tag.akunting{background:color-mix(in srgb,var(--g1) 22%,transparent);color:var(--acc)}
+.lng{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 10px;border-radius:12px;border:1px solid var(--line);background:var(--sf);color:var(--ink);cursor:pointer;font-weight:700;font-size:13px}
+.l-right .lng{position:absolute;top:18px;right:66px}.top .lng{margin-right:8px}
+.tk2{font-style:normal;margin-left:5px;letter-spacing:-1px;opacity:.75}.tk2.rd{color:#9ae6b4;opacity:1}
+.pwbox{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:14px 0 10px;padding:12px 14px;border-radius:12px;background:var(--sf2);border:1px dashed var(--line)}.pwbox code{font-size:17px;font-weight:700;letter-spacing:.5px;word-break:break-all}
+#ld{position:fixed;inset:0;z-index:60;display:grid;place-items:center;background:rgba(6,18,11,.45);backdrop-filter:blur(4px);animation:ldin .25s .15s both}@keyframes ldin{from{opacity:0}to{opacity:1}}
+.ldc{display:flex;flex-direction:column;align-items:center;gap:14px;background:var(--sf);padding:26px 38px;border-radius:22px;box-shadow:var(--sh);border:1px solid var(--line);animation:pop .25s .15s both}
+.ring{position:relative;width:88px;height:88px;display:grid;place-items:center}
+.ring::before{content:"";position:absolute;inset:0;border-radius:50%;background:conic-gradient(transparent 0 20%,var(--g1) 65%,var(--g2));-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 calc(100% - 5px));mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 calc(100% - 5px));animation:spin .9s linear infinite}
+.ring::after{content:"";position:absolute;inset:10px;border-radius:50%;border:2px dashed color-mix(in srgb,var(--g1) 40%,transparent);animation:spin 5s linear infinite reverse}
+.ring img{width:44px;height:auto;border-radius:6px;animation:pulse 1.4s ease-in-out infinite}@keyframes spin{to{transform:rotate(360deg)}}@keyframes pulse{50%{transform:scale(.86);opacity:.8}}
+.ldt{font-weight:600;font-size:14px}.dots3{display:flex;gap:6px}.dots3 i{width:7px;height:7px;border-radius:50%;background:var(--g1);animation:bnc 1s infinite}.dots3 i:nth-child(2){animation-delay:.15s}.dots3 i:nth-child(3){animation-delay:.3s}
+@keyframes bnc{0%,80%,100%{transform:translateY(0);opacity:.4}40%{transform:translateY(-6px);opacity:1}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -134,7 +148,7 @@ table.rs td{display:flex;justify-content:space-between;gap:14px;border:0;padding
   <div><h1>SI LEMBUR YONASINDO</h1><p>Catat jam lembur, setujui per divisi, dan rekap lembur bulanan dalam satu tempat.</p></div>
   <ul><li>Pengajuan lembur dan kalender per tanggal</li><li>Persetujuan kepala divisi</li><li>Rekap bulanan yang bisa diunduh sebagai PDF</li></ul>
  </div>
- <div class="l-right"><button class="thm" type="button" onclick="toggleTheme()" aria-label="Ganti tema"></button><form class="box" onsubmit="return doLogin(event)">
+ <div class="l-right"><button class="lng" type="button" onclick="toggleLang()" aria-label="Bahasa / 言語"></button><button class="thm" type="button" onclick="toggleTheme()" aria-label="Ganti tema"></button><form class="box" onsubmit="return doLogin(event)">
   <h2>Masuk</h2><div class="note">Gunakan akun yang diberikan admin.</div>
   <label for="u">Username</label><input id="u" autocomplete="username" required>
   <label for="p">Kata sandi</label><div class="pw"><input id="p" type="password" autocomplete="current-password" required><button type="button" class="eye" onclick="togglePw('p',this)">Lihat</button></div>
@@ -150,24 +164,27 @@ table.rs td{display:flex;justify-content:space-between;gap:14px;border:0;padding
  </aside>
  <main>
   <header class="top"><button id="burger" onclick="menu(true)" aria-label="Menu"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-   <div class="tt"><h2 id="title"></h2><div class="sub" id="sub"></div></div><button class="thm" type="button" onclick="toggleTheme()" aria-label="Ganti tema"></button></header>
+   <div class="tt"><h2 id="title"></h2><div class="sub" id="sub"></div></div><button class="lng" type="button" onclick="toggleLang()" aria-label="Bahasa / 言語"></button><button class="thm" type="button" onclick="toggleTheme()" aria-label="Ganti tema"></button></header>
   <div id="view"></div>
   <footer class="wm">Aplikasi Si Lembur Yonasindo ini dirancang dan dibuat oleh Elvari Faisal (Tim IT LPK YONASINDO)</footer>
  </main>
 </div>
 <div id="ov" onclick="menu(false)"></div>
+<div id="ld" class="hide" role="status" aria-live="polite"><div class="ldc"><div class="ring"><img src="logo.png" alt="" onerror="this.remove()"></div><div class="ldt" id="ldt">Memproses…</div><div class="dots3"><i></i><i></i><i></i></div></div></div>
 <div id="mod" class="hide" onclick="if(event.target===this)closeM()"><div class="mbox" id="mbox"></div></div>
 <script>
 /* Alamat server diisi di file config.js (cukup sekali, tidak ikut berubah saat aplikasi diperbarui) */
+let LANG='id';try{LANG=localStorage.getItem('yonas_lang')||'id'}catch(e){}
+let LOC=LANG==='ja'?'ja-JP':'id-ID';
 const API_URL=(window.APP_CONFIG&&window.APP_CONFIG.API_URL)||'';
 const WIB={timeZone:'Asia/Jakarta'};
 const today=()=>new Date().toLocaleDateString('en-CA',WIB);
-const wkt=t=>new Date(t).toLocaleDateString('id-ID',{...WIB,day:'numeric',month:'short',year:'numeric'});
+const wkt=t=>new Date(t).toLocaleDateString(LOC,{...WIB,day:'numeric',month:'short',year:'numeric'});
 const hm=t=>new Date(t).toLocaleTimeString('en-GB',{...WIB,hour:'2-digit',minute:'2-digit',hour12:false});
 
 const $=(s)=>document.querySelector(s);
-const tgl=d=>new Date(d+'T00:00').toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
-const bln=m=>new Date(m+'-01T00:00').toLocaleDateString('id-ID',{month:'long',year:'numeric'});
+const tgl=d=>new Date(d+'T00:00').toLocaleDateString(LOC,{day:'numeric',month:'short',year:'numeric'});
+const bln=m=>new Date(m+'-01T00:00').toLocaleDateString(LOC,{month:'long',year:'numeric'});
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let DB,ME,PAGE,PEER=null;
 
@@ -185,30 +202,39 @@ const grupOf=d=>GRUP.find(g=>g.includes(d))||[];
 function toast(m){const t=document.createElement('div');t.id='toast';t.textContent=m;document.body.append(t);setTimeout(()=>t.remove(),2400)}
 
 /* ---------- login ---------- */
-async function doLogin(e){e.preventDefault();const er=$('#lerr');
+async function doLogin(e){e.preventDefault();const er=$('#lerr');if(BUSY)return false;
  if(!API_URL){er.textContent='Aplikasi belum dihubungkan ke server (API_URL kosong).';return false}
- er.textContent='Memeriksa…';
- const x=await api('login',{username:$('#u').value.trim(),password:$('#p').value});
- if(!x.ok){er.textContent=x.error||'Gagal masuk.';return false}
- TOKEN=x.token;sessionStorage.setItem('yonas_t',TOKEN);const m=await refresh();
- if(m){er.textContent=m;return false}er.textContent='';$('#p').value='';idle=Date.now();start();return false}
+ BUSY=1;ld(1,'Memeriksa…');er.textContent='';
+ try{const x=await api('login',{username:$('#u').value.trim(),password:$('#p').value});
+  if(!x.ok){er.textContent=x.error||'Gagal masuk.';return false}
+  TOKEN=x.token;sessionStorage.setItem('yonas_t',TOKEN);const m=await refresh();
+  if(m){er.textContent=m;return false}$('#p').value='';idle=Date.now();start()}
+ finally{BUSY=0;ld(0)}return false}
 async function logout(){try{if(TOKEN)await Promise.race([api('logout'),new Promise(r=>setTimeout(r,800))])}catch(e){}TOKEN='';sessionStorage.removeItem('yonas_t');location.reload()}
-async function init(){if(!TOKEN||!API_URL)return;const m=await refresh();if(m){TOKEN='';sessionStorage.removeItem('yonas_t');return}start()}
+async function init(){if(!TOKEN||!API_URL)return;ld(1);const m=await refresh();ld(0);if(m){TOKEN='';sessionStorage.removeItem('yonas_t');return}start()}
 let TOKEN=sessionStorage.getItem('yonas_t')||'',idle=Date.now();
 ['click','keydown','touchstart'].forEach(v=>document.addEventListener(v,()=>idle=Date.now(),{passive:true}));
 async function api(action,p={}){let t;
  try{t=await (await fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({...p,action,token:TOKEN})})).text()}catch(e){return{ok:false,error:'Tidak bisa menghubungi server. Periksa koneksi internet dan API_URL.'}}
  let x;try{x=JSON.parse(t)}catch(e){return{ok:false,error:'Server tidak mengembalikan data. Pastikan URL berakhiran /exec dan akses deployment "Anyone".'}}
  if(x.auth&&ME){ME=null;toast('Sesi berakhir, silakan login ulang');setTimeout(logout,1200)}return x}
-async function refresh(){const x=await api('data');if(!x.ok)return x.error||'Gagal memuat data.';x.pengumuman=x.pengumuman||[];x.catatan=x.catatan||[];x.log=x.log||[];x.libur=x.libur||[];DB=x;ME=x.me;return ''}
-async function act(action,p,msg){const x=await api(action,p);if(!x.ok){toast(x.error||'Gagal');return false}const m=await refresh();if(m){toast(m);return false}if(msg)toast(msg);return true}
-const RL={admin:'Administrator',kadiv:'Kepala Divisi',karyawan:'Karyawan'};
+let BUSY=0;
+function ld(on,t){$('#ld').classList.toggle('hide',!on);if(on)$('#ldt').textContent=t||'Memproses…'}
+function setDB(x){const p=DB;x.pengumuman=x.pengumuman||[];x.catatan=x.catatan||[];x.log=x.log||[];x.libur=x.libur||[];if(!x.chat)x.chat=(p&&p.chat)||[];DB=x;ME=x.me}
+async function refresh(){const x=await api('data');if(!x.ok)return x.error||'Gagal memuat data.';setDB(x);return ''}
+async function callL(action,p){if(BUSY)return null;BUSY=1;ld(1);try{return await api(action,p)}finally{BUSY=0;ld(0)}}
+async function act(action,p,msg,quiet){if(BUSY)return false;BUSY=1;if(!quiet)ld(1);
+ try{const x=await api(action,p);if(!x.ok){toast(x.error||'Gagal');return false}
+  if(x.users)setDB(x);else{const m=await refresh();if(m){toast(m);return false}}
+  if(msg)toast(msg);return true}finally{BUSY=0;ld(0)}}
+const RL={admin:'Administrator',akunting:'Akunting',kadiv:'Kepala Divisi',karyawan:'Karyawan'};
+const ADM=()=>!!ME&&(ME.role==='admin'||ME.role==='akunting');
 const MENU={
  admin:[['dash','Dashboard','grid'],['info','Pengumuman','mega'],['lembur','Semua Lembur','list'],['detail','Detail Pegawai','clip'],['kalender','Kalender Lembur','cal'],['libur','Hari Libur','flag'],['users','Kelola User','users'],['divisi','Divisi & Persetujuan','layers'],['laporan','Rekap Jam Lembur','chart'],['catatan','Catatan Kerja','note'],['chat','Chat','chat'],['log','Log Aktivitas','activity'],['profil','Profil Saya','user']],
  kadiv:[['dash','Dashboard','grid'],['info','Pengumuman','mega'],['approve','Persetujuan Lembur','check'],['riwayat','Riwayat Lembur','clock'],['detail','Detail Pegawai','clip'],['tim','Rekap Jam Pegawai','chart'],['kalender','Kalender Lembur','cal'],['catatan','Catatan Kerja','note'],['chat','Chat','chat'],['profil','Profil Saya','user']],
  karyawan:[['dash','Dashboard','grid'],['info','Pengumuman','mega'],['ajukan','Ajukan Lembur','plus'],['saya','Riwayat Lembur','clock'],['kalender','Kalender Lembur','cal'],['catatan','Catatan Kerja','note'],['chat','Chat','chat'],['profil','Profil Saya','user']]};
 function start(){$('#login').classList.add('hide');$('#app').classList.remove('hide');
- $('#role').textContent=RL[ME.role]+(ME.role!=='admin'?' · '+ME.divisi:'');
+ $('#role').textContent=RL[ME.role]+(ME.divisi&&ME.divisi!=='-'?' · '+ME.divisi:'');
  $('#mn').textContent=ME.nama;$('#md').textContent='@'+ME.username;$('#mav').textContent=ini(ME.nama);go('dash')}
 const navHtml=p=>MENU[ME.role].map(m=>`<a class="${m[0]===p?'on':''}" onclick="go('${m[0]}')">${ic(m[2])}<span>${m[1]}</span>${m[0]==='chat'&&unread()?`<em>${unread()}</em>`:''}</a>`).join('')+`<a class="out" onclick="logout()">${ic('logout')}<span>Keluar</span></a>`;
 function menu(o){$('#side').classList.toggle('open',o);$('#ov').classList.toggle('show',o)}
@@ -222,8 +248,8 @@ const tag=s=>`<span class="tag ${s}">${s}</span>`;
 function tbl(cols,rows,empty='Belum ada data.'){
  if(!rows.length)return`<div class="empty">${empty}</div>`;
  return`<div class="wrap"><table class="rs"><thead><tr>${cols.map(c=>`<th>${c}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map((c,i)=>`<td data-l="${cols[i]}">${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
-const scope=()=>DB.lembur.filter(l=>ME.role==='admin'||(ME.role==='kadiv'&&grupOf(ME.divisi).includes(U(l.uid).divisi))||(ME.role==='karyawan'&&l.uid===ME.id)).sort((a,b)=>b.tgl.localeCompare(a.tgl));
-const scopeUsers=()=>DB.users.filter(u=>u.role==='karyawan'&&(ME.role==='admin'||grupOf(ME.divisi).includes(u.divisi)));
+const scope=()=>DB.lembur.filter(l=>ADM()||(ME.role==='kadiv'&&grupOf(ME.divisi).includes(U(l.uid).divisi))||(ME.role==='karyawan'&&l.uid===ME.id)).sort((a,b)=>b.tgl.localeCompare(a.tgl));
+const scopeUsers=()=>DB.users.filter(u=>u.role==='karyawan'&&(ADM()||grupOf(ME.divisi).includes(u.divisi)));
 const sum=a=>Math.round(a.reduce((s,l)=>s+l.jam,0)*100)/100;
 const sc=(i,l,v,c,x='')=>`<div class="stat" style="--c:${c}"><span class="ic">${ic(i)}</span><div><div class="n">${v}${x}</div><span>${l}</span></div></div>`;
 const mo=n=>{const d=new Date();d.setDate(1);d.setMonth(d.getMonth()+n);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')};
@@ -237,11 +263,11 @@ function lrow(l,mode){const u=U(l.uid);
  const base=[tgl(l.tgl)+lbadge(l.tgl),l.mulai+' – '+l.selesai,l.jam+' jam',esc(l.ket)];
  const st=tag(l.status)+(l.catatan?`<div class="note">${esc(l.catatan)}</div>`:'');
  if(mode==='act')return[esc(u.nama),u.divisi,...base,`<div class="acts"><button class="btn sm ok" onclick="decide(${l.id},'Disetujui')">Setujui</button><button class="btn sm no" onclick="decide(${l.id},'Ditolak')">Tolak</button></div>`];
- if(mode==='all')return[esc(u.nama),u.divisi,...base,st];
+ if(mode==='all')return[esc(u.nama),u.divisi,...base,st+(ME.role!=='karyawan'&&l.status!=='Menunggu'?`<div style="margin-top:6px"><button class="btn sm ghost" onclick="hapusL(${l.id})">Hapus</button></div>`:'')];
  return[...base,st,l.status==='Menunggu'?`<div class="acts"><button class="btn sm ghost" onclick="editL(${l.id})">Ubah</button><button class="btn sm ghost" onclick="delL(${l.id})">Batalkan</button></div>`:'-']}
-async function decide(id,s){let n='';if(s==='Ditolak'){n=prompt('Alasan penolakan (wajib diisi):');if(!n)return}
+async function decide(id,s){let n='';if(s==='Ditolak'){n=prompt(T('Alasan penolakan (wajib diisi):'));if(!n)return}
  if(await act('decide',{id,status:s,catatan:n},'Lembur '+s.toLowerCase()))go(PAGE)}
-async function delL(id){if(!confirm('Batalkan pengajuan ini?'))return;if(await act('cancel',{id}))go(PAGE)}
+async function delL(id){if(!confirm(T('Batalkan pengajuan ini?')))return;if(await act('cancel',{id}))go(PAGE)}
 
 
 /* ---------- modal ---------- */
@@ -266,7 +292,7 @@ function bar(p){const f=PG[p].f,months=[...new Set([...scope().map(l=>l.tgl.slic
 const listCard=p=>`<div class="card">${bar(p)}<div id="lt2"></div></div>`;
 function fill(){const P=PG[PAGE],v=i=>($(i)?.value||''),q=v('#fq').toLowerCase(),m=v('#fm'),s=v('#fs'),d=v('#fd'),out=$('#lt2');
  if(P.users){const us=DB.users.filter(u=>(!q||u.nama.toLowerCase().includes(q))&&(!d||u.divisi===d));
-  out.innerHTML=tbl(['Nama','Username','Peran','Divisi','Aksi'],us.map(u=>[esc(u.nama),esc(u.username),`<span class="tag ${u.role}">${RL[u.role]}</span>`,u.divisi,`<div class="acts"><button class="btn sm ghost" onclick="userForm(${u.id})">Ubah</button>${u.id!==ME.id?`<button class="btn sm ghost" onclick="delU(${u.id})">Hapus</button>`:''}</div>`]),'Tidak ada user yang cocok.');return}
+  out.innerHTML=tbl(['Nama','Username','Peran','Divisi','Aksi'],us.map(u=>[esc(u.nama),esc(u.username),`<span class="tag ${u.role}">${RL[u.role]}</span>`,u.divisi,`<div class="acts"><button class="btn sm ghost" onclick="userForm(${u.id})">Ubah</button>${ME.role==='admin'?`<button class="btn sm ghost" onclick="lihatPw(${u.id})">Sandi</button>`:''}${u.id!==ME.id?`<button class="btn sm ghost" onclick="delU(${u.id})">Hapus</button>`:''}</div>`]),'Tidak ada user yang cocok.');return}
  let a=scope().filter(l=>(!m||l.tgl.slice(0,7)===m)&&(!s||l.status===s)&&(!d||U(l.uid).divisi===d)&&(!q||U(l.uid).nama.toLowerCase().includes(q)));
  if(P.pre)a=a.filter(P.pre);
  if(P.rekap){const us=scopeUsers().filter(u=>(!q||u.nama.toLowerCase().includes(q))&&(!d||u.divisi===d));
@@ -283,10 +309,10 @@ const V={
 dash(){const a=scope(),ap=a.filter(l=>l.status==='Disetujui'),tm=today().slice(0,7),mgr=ME.role!=='karyawan',cnt=x=>a.filter(l=>l.status===x).length;
  const pe=DB.pengumuman.slice().sort((x,y)=>y.ts-x.ts).slice(0,3),tg=DB.catatan.filter(c=>c.tipe==='tugas'&&c.status!=='Selesai').sort(cmpT).slice(0,4),wait=cnt('Menunggu');
  const dow=[0,0,0,0,0,0,0];ap.forEach(l=>dow[(new Date(l.tgl+'T00:00').getDay()+6)%7]+=l.jam);
- const dv=(ME.role==='admin'?DIVS:grupOf(ME.divisi)).map(d=>[esc(d),sum(ap.filter(l=>l.tgl.slice(0,7)===tm&&U(l.uid).divisi===d))]);
+ const dv=(ADM()?DIVS:grupOf(ME.divisi)).map(d=>[esc(d),sum(ap.filter(l=>l.tgl.slice(0,7)===tm&&U(l.uid).divisi===d))]);
  const top=scopeUsers().map(u=>[u,sum(ap.filter(l=>l.uid===u.id&&l.tgl.slice(0,7)===tm))]).filter(x=>x[1]>0).sort((x,y)=>y[1]-x[1]).slice(0,5);
- $('#sub').textContent=ME.role==='admin'?'Seluruh perusahaan':ME.role==='kadiv'?'Divisi '+grupOf(ME.divisi).join(', '):'Divisi '+ME.divisi;
- const q=ME.role==='karyawan'?`<button class="btn" onclick="go('ajukan')">${ic('plus')} Ajukan lembur</button>`:ME.role==='kadiv'?`<button class="btn" onclick="go('approve')">${ic('check')} Persetujuan${wait?' ('+wait+')':''}</button>`:`<button class="btn" onclick="go('users')">${ic('users')} Kelola user</button>`;
+ $('#sub').textContent=ADM()?'Seluruh perusahaan':ME.role==='kadiv'?'Divisi '+grupOf(ME.divisi).join(', '):'Divisi '+ME.divisi;
+ const q=ME.role==='karyawan'?`<button class="btn" onclick="go('ajukan')">${ic('plus')} Ajukan lembur</button>`:ME.role==='kadiv'?`<button class="btn" onclick="go('approve')">${ic('check')} Persetujuan${wait?' ('+wait+')':''}</button>`:ME.role==='admin'?`<button class="btn" onclick="go('users')">${ic('users')} Kelola user</button>`:`<button class="btn" onclick="go('laporan')">${ic('chart')} Rekap jam</button>`;
  let h=`<div class="hero"><div><div class="hi">${sapa()}, ${esc(ME.nama.split(' ')[0])}</div><div class="clk" id="clk">--:--:--</div><div class="dt"><span id="dt"></span> · WIB</div></div><div class="hq">${q}<button class="btn light" onclick="go('kalender')">${ic('cal')} Kalender</button></div></div>`+stats(a);
  h+=`<div class="g2">`+card('Jam lembur 6 bulan terakhir',mini6())+card('Status pengajuan',donut([cnt('Menunggu'),cnt('Disetujui'),cnt('Ditolak')]))
   +(mgr?card('Jam lembur per divisi (bulan ini)',hb(dv))+card('Pegawai terbanyak lembur (bulan ini)',top.length?hb(top.map(x=>[`<a class="lnk" onclick="openDet(${x[0].id})">${esc(x[0].nama.split(' ')[0])}</a>`,x[1]])):'<div class="empty">Belum ada data bulan ini.</div>'):'')
@@ -320,10 +346,10 @@ libur(){$('#sub').textContent='Kelola hari libur nasional, cuti bersama, dan lib
  return`<div class="card"><div class="bar"><select onchange="LY=this.value;go('libur')">${ys.map(v=>`<option ${v===y?'selected':''}>${v}</option>`).join('')}</select><span class="grow note">Sabtu dan Minggu otomatis dianggap hari libur.</span><button class="btn" onclick="liburForm()">+ Tambah hari libur</button></div>${tbl(['Tanggal','Hari','Keterangan','Jenis',''],a.map(x=>[tgl(x.tgl),hari(x.tgl),esc(x.nama),`<span class="tag lib">${esc(x.tipe)}</span>`,`<button class="btn sm ghost" onclick="delLibur('${x.tgl}')">Hapus</button>`]),'Belum ada data libur untuk tahun ini. Tambahkan sesuai SKB 3 Menteri.')}</div>`},
 kalender(){$('#sub').textContent=ME.role==='karyawan'?'Lihat dan ajukan lembur berdasarkan tanggal.':'Sebaran lembur pegawai per tanggal.';return`<div id="calw">${calHtml()}</div>`},
 detail(){$('#sub').textContent='Rincian hari dan jam lembur setiap pegawai.';return`<div id="dv">${detHtml()}</div>`},
-log(){$('#sub').textContent='Riwayat aktivitas pengguna (300 terakhir).';return`<div class="card"><div class="bar"><input id="lq" type="search" placeholder="Cari pengguna atau detail…" oninput="logFill()"><select id="la" onchange="logFill()"><option value="">Semua aksi</option>${[...new Set(DB.log.map(x=>x.aksi))].sort().map(x=>`<option>${esc(x)}</option>`).join('')}</select></div><div id="lg"></div></div>`},
+log(){$('#sub').textContent='Riwayat aktivitas 30 hari terakhir. Data yang lebih lama dihapus otomatis.';return`<div class="card"><div class="bar"><input id="lq" type="search" placeholder="Cari pengguna atau detail…" oninput="logFill()"><select id="la" onchange="logFill()"><option value="">Semua aksi</option>${[...new Set(DB.log.map(x=>x.aksi))].sort().map(x=>`<option>${esc(x)}</option>`).join('')}</select></div><div id="lg"></div></div>`},
 info(){const can=ME.role!=='karyawan',ps=DB.pengumuman.slice().sort((x,y)=>y.ts-x.ts);
  $('#sub').textContent=can?'Anda dapat membuat pengumuman untuk pegawai.':'Informasi dari admin dan kepala divisi.';
- return`<div class="card">${can?'<div class="bar"><span class="grow note">Pengumuman muncul di dashboard pegawai yang dituju.</span><button class="btn" onclick="infoForm()">+ Buat pengumuman</button></div>':''}${ps.length?ps.map(p=>`<article class="an big"><div class="bar" style="margin:0"><b class="grow">${esc(p.judul)}</b>${can&&(ME.role==='admin'||p.by===ME.id)?`<button class="btn sm ghost" onclick="delInfo(${p.id})">Hapus</button>`:''}</div><div class="note">${esc(U(p.by).nama)} · ${wkt(p.ts)} · Untuk: ${tgtL(p.target)}</div><p>${esc(p.isi)}</p></article>`).join(''):'<div class="empty">Belum ada pengumuman.</div>'}</div>`},
+ return`<div class="card">${can?'<div class="bar"><span class="grow note">Pengumuman muncul di dashboard pegawai yang dituju.</span><button class="btn" onclick="infoForm()">+ Buat pengumuman</button></div>':''}${ps.length?ps.map(p=>`<article class="an big"><div class="bar" style="margin:0"><b class="grow">${esc(p.judul)}</b>${can&&(ADM()||p.by===ME.id)?`<button class="btn sm ghost" onclick="delInfo(${p.id})">Hapus</button>`:''}</div><div class="note">${esc(U(p.by).nama)} · ${wkt(p.ts)} · Untuk: ${tgtL(p.target)}</div><p>${esc(p.isi)}</p></article>`).join(''):'<div class="empty">Belum ada pengumuman.</div>'}</div>`},
 catatan(){$('#sub').textContent='Catatan pribadi, hanya Anda yang bisa melihatnya.';
  return`<div class="card"><div class="tabs"><a class="${CT==='tugas'?'on':''}" onclick="CT='tugas';go('catatan')">Tugas</a><a class="${CT==='memo'?'on':''}" onclick="CT='memo';go('catatan')">Memo</a></div>
  <div class="bar"><input id="cqq" type="search" placeholder="Cari catatan…" oninput="catFill()">${CT==='tugas'?'<select id="cqs" onchange="catFill()"><option value="">Semua tugas</option><option value="open">Belum selesai</option><option value="done">Selesai</option></select>':''}<span class="grow"></span><button class="btn" onclick="catForm(0)">+ Tambah ${CT}</button></div><div id="cat"></div></div>`},
@@ -341,23 +367,27 @@ const dayL=d=>d===today()?'Hari ini':d===new Date(Date.now()-864e5).toLocaleDate
 function clist(){const q=($('#cq')?.value||'').toLowerCase(),msgs=id=>DB.chat.filter(c=>(c.from===id&&c.to===ME.id)||(c.to===id&&c.from===ME.id)),lt=m=>Math.max(0,...m.map(c=>c.ts));
  const us=DB.users.filter(u=>u.id!==ME.id&&u.nama.toLowerCase().includes(q)).map(u=>({u,m:msgs(u.id)})).sort((x,y)=>lt(y.m)-lt(x.m)||x.u.nama.localeCompare(y.u.nama));
  $('#cl').innerHTML=us.map(({u,m})=>{const l=m.slice().sort((x,y)=>x.ts-y.ts).pop(),n=m.filter(c=>c.from===u.id&&!c.r).length;
-  return`<a class="ct ${u.id===PEER?'on':''}" onclick="openChat(${u.id})">${av(u)}<span class="ctx"><b>${esc(u.nama)}</b><small>${l?(l.from===ME.id?'Anda: ':'')+esc(l.text.slice(0,36)):RL[u.role]+(u.divisi!=='-'?' · '+u.divisi:'')}</small></span>${n?`<em>${n}</em>`:''}</a>`}).join('')||'<div class="empty">Tidak ditemukan.</div>'}
+  return`<a class="ct ${u.id===PEER?'on':''}" onclick="openChat(${u.id})">${av(u)}<span class="ctx"><b>${esc(u.nama)}</b><small>${l?(l.from===ME.id?(l.r?'✓✓ ':'✓ ')+'Anda: ':'')+esc(l.text.slice(0,36)):RL[u.role]+(u.divisi!=='-'?' · '+u.divisi:'')}</small></span>${n?`<em>${n}</em>`:''}</a>`}).join('')||'<div class="empty">Tidak ditemukan.</div>'}
 async function openChat(id){PEER=id;$('#chat').classList.add('open');
- if(DB.chat.some(c=>c.from===id&&c.to===ME.id&&!c.r))await act('read',{peer:id});
+ if(DB.chat.some(c=>c.from===id&&c.to===ME.id&&!c.r))await act('read',{peer:id},'',1);
  clist();cmsg();$('#nav').innerHTML=navHtml('chat')}
 function cmsg(){const box=$('#cm');
  if(!PEER){box.dataset.k='';$('#cn').textContent='Pilih kontak';$('#cr').textContent='';$('#cav').innerHTML='';box.innerHTML='<div class="cempty"><b>Belum ada percakapan dipilih</b><span>Pilih nama di daftar untuk mulai mengobrol.</span></div>';return}
  const u=U(PEER);$('#cn').textContent=u.nama;$('#cr').textContent=(RL[u.role]||'')+(u.divisi&&u.divisi!=='-'?' · '+u.divisi:'');$('#cav').innerHTML=av(u);
  const ms=DB.chat.filter(c=>(c.from===ME.id&&c.to===PEER)||(c.from===PEER&&c.to===ME.id)).sort((x,y)=>x.ts-y.ts);
- const key=PEER+':'+ms.length+':'+ms.filter(c=>c.r).length;if(box.dataset.k===key)return;box.dataset.k=key;let last='';
- box.innerHTML=ms.map(c=>{const d=new Date(c.ts).toLocaleDateString('en-CA',WIB),sep=d!==last?`<div class="dsep"><span>${dayL(d)}</span></div>`:'';last=d;return sep+`<div class="msg ${c.from===ME.id?'me':''}">${esc(c.text)}<small>${hm(c.ts)}</small></div>`}).join('')||'<div class="cempty"><b>Belum ada pesan</b><span>Sapa duluan.</span></div>';
+ const key=PEER+':'+ms.length+':'+ms.filter(c=>c.r).length+':'+ms.filter(c=>c.tmp).length;if(box.dataset.k===key)return;box.dataset.k=key;let last='';
+ box.innerHTML=ms.map(c=>{const d=new Date(c.ts).toLocaleDateString('en-CA',WIB),sep=d!==last?`<div class="dsep"><span>${dayL(d)}</span></div>`:'';last=d;return sep+`<div class="msg ${c.from===ME.id?'me':''}">${esc(c.text)}<small>${hm(c.ts)}${c.from===ME.id?`<i class="tk2 ${c.r?'rd':''}" title="${c.tmp?'Mengirim…':c.r?'Dibaca':'Terkirim'}">${c.tmp?'…':c.r?'✓✓':'✓'}</i>`:''}</small></div>`}).join('')||'<div class="cempty"><b>Belum ada pesan</b><span>Sapa duluan.</span></div>';
  box.scrollTop=box.scrollHeight}
 async function send(e){e.preventDefault();const t=$('#ct').value.trim();if(!t||!PEER)return false;$('#ct').value='';
- if(await act('chat',{to:PEER,text:t})){clist();cmsg()}return false}
+ const tmp={id:-Date.now(),from:ME.id,to:PEER,text:t,ts:Date.now(),r:0,tmp:1};DB.chat.push(tmp);clist();cmsg();
+ const x=await api('chat',{to:PEER,text:t});
+ if(x.ok&&x.users)setDB(x);else{DB.chat=DB.chat.filter(c=>c!==tmp);toast(x.error||'Pesan gagal terkirim')}
+ clist();cmsg();return false}
 async function tick(){if(!ME)return;
  if(Date.now()-idle>18e5){toast('Keluar otomatis karena tidak aktif');ME=null;setTimeout(logout,900);return}
- if(document.hidden||!$('#mod').classList.contains('hide'))return;
+ if(document.hidden||BUSY||!$('#mod').classList.contains('hide'))return;
  if(await refresh())return;
+ if(PAGE==='chat'&&PEER&&DB.chat.some(c=>c.from===PEER&&c.to===ME.id&&!c.r))await act('read',{peer:PEER},'',1);
  $('#nav').innerHTML=navHtml(PAGE);
  if(PG[PAGE])fill();else if(PAGE==='chat'){clist();cmsg()}else if(PAGE==='catatan')catFill();else if(PAGE==='log')logFill();
  else if(['dash','divisi','info','kalender','detail','libur'].includes(PAGE)){$('#view').innerHTML=V[PAGE]();if(PAGE==='dash')clock()}}
@@ -381,18 +411,18 @@ function userForm(id){const u=DB.users.find(x=>x.id===id)||{nama:'',username:'',
 async function saveU(e,id){e.preventDefault();
  const o={id,nama:$('#fn').value.trim(),username:$('#fu').value.trim(),password:$('#fp').value,role:$('#fr').value,divisi:$('#fv').value,masuk:$('#fy').value,lahir:$('#fl').value,hp:$('#fh').value.trim(),email:$('#fe').value.trim()};
  if(await act('saveUser',o,'User disimpan')){closeM();go('users')}return false}
-async function delU(id){if(!confirm('Hapus user ini beserta data lemburnya?'))return;if(await act('deleteUser',{id},'User dihapus'))go('users')}
+async function delU(id){if(!confirm(T('Hapus user ini beserta data lemburnya?')))return;if(await act('deleteUser',{id},'User dihapus'))go('users')}
 
 async function saveProfil(e){e.preventDefault();await act('saveProfil',{lahir:$('#pl').value,email:$('#pe').value.trim(),hp:$('#ph').value.trim()},'Profil disimpan');return false}
 
 /* ---------- jam, sapaan, grafik ---------- */
-function clock(){const c=$('#clk');if(!c)return;const n=new Date();c.textContent=n.toLocaleTimeString('en-GB',{...WIB,hour12:false});$('#dt').textContent=n.toLocaleDateString('id-ID',{...WIB,weekday:'long',day:'numeric',month:'long',year:'numeric'})}
+function clock(){const c=$('#clk');if(!c)return;const n=new Date();c.textContent=n.toLocaleTimeString('en-GB',{...WIB,hour12:false});$('#dt').textContent=n.toLocaleDateString(LOC,{...WIB,weekday:'long',day:'numeric',month:'long',year:'numeric'})}
 setInterval(clock,1000);
 const sapa=()=>{const h=parseInt(new Date().toLocaleString('en-GB',{...WIB,hour:'2-digit',hour12:false}),10);return h<11?'Selamat pagi':h<15?'Selamat siang':h<18?'Selamat sore':'Selamat malam'};
 function mini6(){const a=scope().filter(l=>l.status==='Disetujui'),ms=[];
  for(let i=5;i>=0;i--){const d=new Date();d.setDate(1);d.setMonth(d.getMonth()-i);ms.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'))}
  const v=ms.map(m=>sum(a.filter(l=>l.tgl.slice(0,7)===m))),mx=Math.max(1,...v);
- return`<div class="cols">${ms.map((m,i)=>`<div><b>${v[i]}</b><i style="height:${Math.round(v[i]/mx*100)}px"></i><span>${new Date(m+'-01T00:00').toLocaleDateString('id-ID',{month:'short'})}</span></div>`).join('')}</div>`}
+ return`<div class="cols">${ms.map((m,i)=>`<div><b>${v[i]}</b><i style="height:${Math.round(v[i]/mx*100)}px"></i><span>${new Date(m+'-01T00:00').toLocaleDateString(LOC,{month:'short'})}</span></div>`).join('')}</div>`}
 function togglePw(id,b){const i=$('#'+id),s=i.type==='password';i.type=s?'text':'password';b.textContent=s?'Sembunyi':'Lihat'}
 
 /* ---------- pengumuman ---------- */
@@ -400,10 +430,10 @@ const tgtL=t=>t==='semua'?'Semua karyawan':'Kelompok '+t.slice(1)+' ('+(GRUP[+t.
 function infoForm(){openM(`<h3>Buat pengumuman</h3><form onsubmit="return saveInfo(event)">
  <label for="ij">Judul</label><input id="ij" maxlength="80" required>
  <label for="ii">Isi pengumuman</label><textarea id="ii" maxlength="1500" required style="min-height:120px"></textarea>
- ${ME.role==='admin'?`<label for="it">Ditujukan untuk</label><select id="it"><option value="semua">Semua karyawan</option><option value="k1">Kelompok 1 (${GRUP[0].join(', ')})</option><option value="k2">Kelompok 2 (${GRUP[1].join(', ')})</option></select>`:`<div class="note">Pengumuman ini dikirim ke seluruh pegawai divisi: ${esc(grupOf(ME.divisi).join(', '))}.</div>`}
+ ${ADM()?`<label for="it">Ditujukan untuk</label><select id="it"><option value="semua">Semua karyawan</option><option value="k1">Kelompok 1 (${GRUP[0].join(', ')})</option><option value="k2">Kelompok 2 (${GRUP[1].join(', ')})</option></select>`:`<div class="note">Pengumuman ini dikirim ke seluruh pegawai divisi: ${esc(grupOf(ME.divisi).join(', '))}.</div>`}
  <div class="mact"><button type="button" class="btn ghost" onclick="closeM()">Batal</button><button class="btn">Terbitkan</button></div></form>`)}
-async function saveInfo(e){e.preventDefault();if(await act('addPengumuman',{judul:$('#ij').value.trim(),isi:$('#ii').value.trim(),target:ME.role==='admin'?$('#it').value:''},'Pengumuman terbit')){closeM();go('info')}return false}
-async function delInfo(id){if(!confirm('Hapus pengumuman ini?'))return;if(await act('delPengumuman',{id},'Pengumuman dihapus'))go('info')}
+async function saveInfo(e){e.preventDefault();if(await act('addPengumuman',{judul:$('#ij').value.trim(),isi:$('#ii').value.trim(),target:ADM()?$('#it').value:''},'Pengumuman terbit')){closeM();go('info')}return false}
+async function delInfo(id){if(!confirm(T('Hapus pengumuman ini?')))return;if(await act('delPengumuman',{id},'Pengumuman dihapus'))go('info')}
 
 /* ---------- catatan kerja ---------- */
 let CT='tugas';
@@ -425,7 +455,7 @@ function catForm(id){const c=DB.catatan.find(x=>x.id===id)||{judul:'',isi:'',pri
 async function saveCat(e,id){e.preventDefault();const tg=CT==='tugas';
  if(await act('saveCatatan',{id,tipe:CT,judul:$('#cj').value.trim(),isi:$('#ci').value.trim(),prioritas:tg?$('#cp').value:'Sedang',status:tg?$('#cs').value:'Baru',tenggat:tg?$('#cd').value:''},'Catatan disimpan')){closeM();catFill()}return false}
 async function togCat(id){const c=DB.catatan.find(x=>x.id===id);if(!c)return;await act('saveCatatan',{...c,status:c.status==='Selesai'?'Baru':'Selesai'});catFill()}
-async function delCat(id){if(!confirm('Hapus catatan ini?'))return;if(await act('delCatatan',{id},'Catatan dihapus'))catFill()}
+async function delCat(id){if(!confirm(T('Hapus catatan ini?')))return;if(await act('delCatatan',{id},'Catatan dihapus'))catFill()}
 /* ---------- ikon, tema ---------- */
 const ICON={grid:'<rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/>',
 mega:'<path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/>',plus:'<circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/>',clock:'<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
@@ -447,7 +477,7 @@ const hb=r=>{const mx=Math.max(1,...r.map(x=>x[1]));return r.map(x=>`<div class=
 function mini6(){const a=scope().filter(l=>l.status==='Disetujui'),ms=[];
  for(let i=5;i>=0;i--){const d=new Date();d.setDate(1);d.setMonth(d.getMonth()-i);ms.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'))}
  const v=ms.map(m=>sum(a.filter(l=>l.tgl.slice(0,7)===m))),mx=Math.max(1,...v);
- return`<div class="cols">${ms.map((m,i)=>`<div><b>${v[i]}</b><i style="height:${Math.round(v[i]/mx*110)}px"></i><span>${new Date(m+'-01T00:00').toLocaleDateString('id-ID',{month:'short'})}</span></div>`).join('')}</div>`}
+ return`<div class="cols">${ms.map((m,i)=>`<div><b>${v[i]}</b><i style="height:${Math.round(v[i]/mx*110)}px"></i><span>${new Date(m+'-01T00:00').toLocaleDateString(LOC,{month:'short'})}</span></div>`).join('')}</div>`}
 function donut(v){const t=v[0]+v[1]+v[2],col=['var(--wait)','var(--ok)','var(--no)'],nm=['Menunggu','Disetujui','Ditolak'];let acc=0;
  const seg=v.map((x,i)=>{const p=t?x/t*100:0,r=`<circle cx="18" cy="18" r="15.915" fill="none" style="stroke:${col[i]}" stroke-width="4" stroke-dasharray="${p} ${100-p}" stroke-dashoffset="${25-acc}"/>`;acc+=p;return r}).join('');
  return`<div class="dn"><svg viewBox="0 0 36 36" role="img" aria-label="Status pengajuan"><circle cx="18" cy="18" r="15.915" fill="none" style="stroke:var(--sf2)" stroke-width="4"/>${seg}<text x="18" y="19.6" text-anchor="middle" font-size="7.5" font-weight="700" style="fill:var(--ink)">${t}</text></svg><ul>${v.map((x,i)=>`<li><i style="background:${col[i]}"></i>${nm[i]}<b>${x}</b></li>`).join('')}</ul></div>`}
@@ -465,7 +495,7 @@ async function saveEditL(e,id){e.preventDefault();if(await act('editLembur',{id,
 
 /* ---------- kalender lembur ---------- */
 let CAL={y:+today().slice(0,4),m:+today().slice(5,7)-1,sel:''};
-const pad=n=>String(n).padStart(2,'0'),hari=d=>new Date(d+'T00:00').toLocaleDateString('id-ID',{weekday:'long'});
+const pad=n=>String(n).padStart(2,'0'),hari=d=>new Date(d+'T00:00').toLocaleDateString(LOC,{weekday:'long'});
 function calHtml(){const{y,m}=CAL,a=scope(),by={},nm=ME.role==='karyawan',first=(new Date(y,m,1).getDay()+6)%7,dim=new Date(y,m+1,0).getDate(),t=today();
  a.forEach(l=>(by[l.tgl]=by[l.tgl]||[]).push(l));
  let cells=['Sen','Sel','Rab','Kam','Jum','Sab','Min'].map(x=>`<div class="wd">${x}</div>`).join('')+'<div></div>'.repeat(first);
@@ -486,7 +516,7 @@ function detHtml(){const{us,u,a}=detData(),ok=a.filter(l=>l.status==='Disetujui'
  <select id="dm" onchange="DET.m=this.value;detRe()"><option value="">Semua bulan</option>${ms.map(m=>`<option value="${m}" ${m===DET.m?'selected':''}>${bln(m)}</option>`).join('')}</select><span class="grow"></span><button class="btn ghost" onclick="pdfPage()">${ic('dl')} Unduh PDF</button></div>
  <div class="prof">${av(u)}<div><b>${esc(u.nama)}</b><div class="note">Divisi ${u.divisi}${u.email?' · '+esc(u.email):''}${u.hp?' · '+esc(u.hp):''}</div></div></div>
  <div class="stats">${sc('cal','Hari lembur',days+' hari','var(--g1)',detPrev()?dl(days,detPrev().days):'')}${sc('activity','Total jam disetujui',tot+' j','var(--ok)',detPrev()?dl(tot,detPrev().tot):'')}${sc('flag','Lembur di hari libur',a.filter(l=>l.status!=='Ditolak'&&libur(l.tgl)).length+'x','var(--no)')}${sc('chart','Rata-rata per hari',(days?Math.round(tot/days*100)/100:0)+' j','var(--g1)')}${sc('clock','Menunggu',a.filter(l=>l.status==='Menunggu').length,'var(--wait)')}</div>
- ${tbl(['Hari','Tanggal','Jam','Durasi','Keterangan','Status'],a.map(l=>[hari(l.tgl)+lbadge(l.tgl),tgl(l.tgl),l.mulai+' – '+l.selesai,l.jam+' jam',esc(l.ket),tag(l.status)+(l.catatan?`<div class="note">${esc(l.catatan)}</div>`:'')]),'Tidak ada lembur pada periode ini.')}</div>`}
+ ${tbl(['Hari','Tanggal','Jam','Durasi','Keterangan','Status'],a.map(l=>[hari(l.tgl)+lbadge(l.tgl),tgl(l.tgl),l.mulai+' – '+l.selesai,l.jam+' jam',esc(l.ket),tag(l.status)+(l.catatan?`<div class="note">${esc(l.catatan)}</div>`:'')+(l.status!=='Menunggu'?`<div style="margin-top:6px"><button class="btn sm ghost" onclick="hapusL(${l.id})">Hapus</button></div>`:'')]),'Tidak ada lembur pada periode ini.')}</div>`}
 function detRe(){$('#dv').innerHTML=detHtml()}
 function openDet(id){DET.uid=id;go('detail')}
 
@@ -517,7 +547,8 @@ function mkPdf(judul,sub,cols,rows,note){
 const slug=t=>String(t).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 function flt(){const v=i=>($(i)?.value||''),q=v('#fq').toLowerCase(),m=v('#fm'),st=v('#fs'),d=v('#fd');
  return{q,m,st,d,a:scope().filter(l=>(!m||l.tgl.slice(0,7)===m)&&(!st||l.status===st)&&(!d||U(l.uid).divisi===d)&&(!q||U(l.uid).nama.toLowerCase().includes(q)))}}
-function pdfPage(){const f=flt(),mm=m=>m?bln(m):'Semua periode',asc=(x,y)=>x.tgl.localeCompare(y.tgl)||x.mulai.localeCompare(y.mulai);
+function pdfPage(){const l0=LOC;LOC='id-ID';try{pdfPage0()}finally{LOC=l0}}
+function pdfPage0(){const f=flt(),mm=m=>m?bln(m):'Semua periode',asc=(x,y)=>x.tgl.localeCompare(y.tgl)||x.mulai.localeCompare(y.mulai);
  const dr=l=>[hari(l.tgl)+(libur(l.tgl)?' (Libur)':''),tgl(l.tgl),l.mulai+' - '+l.selesai,l.jam+' jam',l.ket,l.status+(l.catatan?' ('+l.catatan+')':'')],dc=[['Hari',78],['Tanggal',68],['Jam',66],['Durasi',42],['Keterangan',170],['Status',85]];
  let j,sb,cols,rows,note='',nm='lembur';
  if(PAGE==='detail'){const{u,a}=detData();if(!u)return toast('Pilih pegawai dulu');const ok=a.filter(l=>l.status==='Disetujui');j='Rincian Lembur Pegawai';sb=u.nama+' - Divisi '+u.divisi+' - '+mm(DET.m);cols=dc;rows=a.map(dr);note='Total disetujui: '+sum(ok)+' jam ('+new Set(ok.map(l=>l.tgl)).size+' hari)';nm+='-'+slug(u.nama)+'-'+(DET.m||'semua')}
@@ -540,7 +571,63 @@ const hlist=(y,m)=>{const k=y+'-'+String(m+1).padStart(2,'0'),a=DB.libur.filter(
 function detPrev(){if(!DET.m)return null;const d=new Date(DET.m+'-01T00:00');d.setMonth(d.getMonth()-1);const pm=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'),a=scope().filter(l=>l.uid===DET.uid&&l.status==='Disetujui'&&l.tgl.slice(0,7)===pm);return{tot:sum(a),days:new Set(a.map(l=>l.tgl)).size}}
 function liburForm(){openM(`<h3>Tambah hari libur</h3><form onsubmit="return saveLibur(event)"><label for="lx">Tanggal</label><input type="date" id="lx" required><label for="ln">Keterangan</label><input id="ln" maxlength="60" required placeholder="Contoh: Tahun Baru Imlek"><label for="lj">Jenis</label><select id="lj"><option>Libur nasional</option><option>Cuti bersama</option><option>Libur perusahaan</option></select><div class="mact"><button type="button" class="btn ghost" onclick="closeM()">Batal</button><button class="btn">Simpan</button></div></form>`)}
 async function saveLibur(e){e.preventDefault();if(await act('addLibur',{tgl:$('#lx').value,nama:$('#ln').value.trim(),tipe:$('#lj').value},'Hari libur disimpan')){closeM();go('libur')}return false}
-async function delLibur(t){if(!confirm('Hapus hari libur ini?'))return;if(await act('delLibur',{tgl:t},'Hari libur dihapus'))go('libur')}
+async function delLibur(t){if(!confirm(T('Hapus hari libur ini?')))return;if(await act('delLibur',{tgl:t},'Hari libur dihapus'))go('libur')}
+/* ---------- fitur tambahan: sandi, hapus lembur, akunting ---------- */
+MENU.akunting=MENU.admin.filter(m=>m[0]!=='users');
+async function hapusL(id){const l=DB.lembur.find(x=>x.id===id);if(!l)return;if(!confirm(T('Hapus lembur')+' '+U(l.uid).nama+' ('+tgl(l.tgl)+', '+l.status+')?'))return;if(await act('deleteLembur',{id},'Lembur dihapus'))go(PAGE)}
+async function lihatPw(id){const x=await callL('revealPw',{id});if(!x)return;if(!x.ok){toast(x.error||'Gagal');return}const u=U(id);
+ openM(`<h3>Kata sandi ${esc(u.nama)}</h3><div class="note">Username: ${esc(u.username||'')}</div><div class="pwbox"><code id="pwv">${esc(x.pw)}</code><button class="btn sm" onclick="copyPw()">Salin</button></div><div class="note">Hanya admin yang dapat melihat ini, dan setiap pelihatan tercatat di Log Aktivitas. Jaga kerahasiaannya.</div><div class="mact"><button class="btn" onclick="closeM()">Tutup</button></div>`)}
+function copyPw(){const t=$('#pwv').textContent;try{navigator.clipboard.writeText(t).then(()=>toast('Tersalin'),()=>toast('Salin manual'))}catch(e){toast('Salin manual')}}
+
+/* ---------- bahasa (Indonesia / Jepang) ---------- */
+const JA={"Catat jam lembur, setujui per divisi, dan rekap lembur bulanan dalam satu tempat.": "残業時間の記録、部署ごとの承認、月次の集計をひとつの場所で。", "Pengajuan lembur dan kalender per tanggal": "残業申請と日付別カレンダー", "Persetujuan kepala divisi": "部門長による承認", "Rekap bulanan yang bisa diunduh sebagai PDF": "PDFでダウンロードできる月次集計", "Masuk": "ログイン", "Gunakan akun yang diberikan admin.": "管理者から付与されたアカウントを使用してください。", "Username": "ユーザー名", "Kata sandi": "パスワード", "Lihat": "表示", "Sembunyi": "非表示", "Lupa kata sandi? Hubungi admin. Sesi berakhir otomatis jika tidak aktif 30 menit.": "パスワードをお忘れの場合は管理者にご連絡ください。30分間操作がないと自動的にログアウトされます。", "Aplikasi Si Lembur Yonasindo ini dirancang dan dibuat oleh Elvari Faisal (Tim IT LPK YONASINDO)": "この「SI LEMBUR YONASINDO」アプリは、Elvari Faisal（LPK YONASINDO ITチーム）が設計・制作しました。", "✕ Tutup": "✕ 閉じる", "Memproses…": "処理中…", "Memeriksa…": "確認中…", "Ganti tema": "テーマ切替", "Menu": "メニュー", "Tutup": "閉じる", "Batal": "キャンセル", "Simpan": "保存", "Hapus": "削除", "Ubah": "編集", "Kirim": "送信", "Kembali": "戻る", "Administrator": "管理者", "Akunting": "経理", "Kepala Divisi": "部門長", "Karyawan": "従業員", "Pegawai": "従業員", "Dashboard": "ダッシュボード", "Pengumuman": "お知らせ", "Semua Lembur": "全残業一覧", "Detail Pegawai": "従業員詳細", "Kalender Lembur": "残業カレンダー", "Hari Libur": "休日設定", "Kelola User": "ユーザー管理", "Divisi & Persetujuan": "部署と承認", "Rekap Jam Lembur": "残業時間集計", "Catatan Kerja": "業務メモ", "Chat": "チャット", "Log Aktivitas": "アクティビティログ", "Profil Saya": "マイプロフィール", "Keluar": "ログアウト", "Persetujuan Lembur": "残業承認", "Riwayat Lembur": "残業履歴", "Rekap Jam Pegawai": "従業員別時間集計", "Ajukan Lembur": "残業申請", "Seluruh perusahaan": "全社", "Kelola user": "ユーザー管理", "Kalender": "カレンダー", "Rekap jam": "時間集計", "Ajukan lembur": "残業申請", "Catatan kerja": "業務メモ", "Pengajuan bulan ini": "今月の申請件数", "Jam lembur bulan ini": "今月の残業時間", "Hari lembur bulan ini": "今月の残業日数", "Lembur di hari libur": "休日の残業", "Menunggu persetujuan": "承認待ち", "Jam lembur 6 bulan terakhir": "過去6か月の残業時間", "Status pengajuan": "申請状況", "Menunggu": "承認待ち", "Disetujui": "承認済み", "Ditolak": "却下", "Jam lembur per divisi (bulan ini)": "部署別残業時間（今月）", "Pegawai terbanyak lembur (bulan ini)": "残業の多い従業員（今月）", "Jam lembur menurut hari": "曜日別の残業時間", "Senin": "月曜日", "Selasa": "火曜日", "Rabu": "水曜日", "Kamis": "木曜日", "Jumat": "金曜日", "Sabtu": "土曜日", "Minggu": "日曜日", "Pengumuman terbaru": "最新のお知らせ", "Lihat semua": "すべて見る", "Tugas saya": "自分のタスク", "Buka catatan": "メモを開く", "Tinggi": "高", "Sedang": "中", "Rendah": "低", "Belum ada pengumuman.": "お知らせはまだありません。", "Tidak ada tugas yang menunggu.": "未完了のタスクはありません。", "Belum ada data bulan ini.": "今月のデータはまだありません。", "Semua riwayat": "すべての履歴", "Tidak ada pengajuan yang menunggu.": "承認待ちの申請はありません。", "Anda belum pernah mengajukan lembur.": "残業を申請したことがありません。", "Aksi": "操作", "Setujui": "承認", "Tolak": "却下する", "Semua pengajuan sudah diputuskan.": "すべての申請が処理済みです。", "Belum ada riwayat lembur pada pilihan ini.": "この条件の残業履歴はありません。", "Tidak ada data pada pilihan ini.": "この条件のデータはありません。", "Anda dapat membuat pengumuman untuk pegawai.": "従業員向けのお知らせを作成できます。", "Informasi dari admin dan kepala divisi.": "管理者と部門長からのお知らせです。", "Pengumuman muncul di dashboard pegawai yang dituju.": "お知らせは対象従業員のダッシュボードに表示されます。", "+ Buat pengumuman": "+ お知らせ作成", "Buat pengumuman": "お知らせを作成", "Judul": "タイトル", "Isi pengumuman": "お知らせ内容", "Ditujukan untuk": "対象", "Semua karyawan": "全従業員", "Terbitkan": "公開", "Semua divisi": "全部署", "Semua bulan": "すべての月", "Semua status": "すべての状態", "Unduh CSV": "CSVをダウンロード", "Unduh PDF": "PDFをダウンロード", "Divisi": "部署", "Tanggal": "日付", "Jam": "時間", "Durasi": "時間数", "Keterangan": "内容", "Status": "状態", "Cari nama…": "名前を検索…", "Libur": "休日", "Akhir pekan": "週末", "Hari Sabtu": "土曜日", "Hari Minggu": "日曜日", "Rincian hari dan jam lembur setiap pegawai.": "従業員ごとの残業日と時間の詳細です。", "Hari lembur": "残業日数", "Total jam disetujui": "承認済み合計時間", "Rata-rata per hari": "1日あたり平均", "Hari": "曜日", "Tidak ada lembur pada periode ini.": "この期間の残業はありません。", "Belum ada pegawai.": "従業員がいません。", "Pilih pegawai dulu": "従業員を選択してください", "Sen": "月", "Sel": "火", "Rab": "水", "Kam": "木", "Jum": "金", "Sab": "土", "Min": "日", "Hari ini": "今日", "Kemarin": "昨日", "Warna:": "色:", "Hari libur": "休日", "★ = lembur di hari libur · ketuk tanggal untuk melihat rincian.": "★ = 休日の残業 · 日付をタップすると詳細が表示されます。", "Bulan sebelumnya": "前の月", "Bulan berikutnya": "次の月", "Tidak ada lembur pada tanggal ini.": "この日の残業はありません。", "Lihat dan ajukan lembur berdasarkan tanggal.": "日付ごとに残業を確認・申請できます。", "Sebaran lembur pegawai per tanggal.": "日付ごとの従業員の残業状況です。", "Kelola hari libur nasional, cuti bersama, dan libur perusahaan.": "祝日・一斉休暇・会社休日を管理します。", "Sabtu dan Minggu otomatis dianggap hari libur.": "土曜日と日曜日は自動的に休日として扱われます。", "+ Tambah hari libur": "+ 休日を追加", "Tambah hari libur": "休日を追加", "Jenis": "種類", "Libur nasional": "祝日", "Cuti bersama": "一斉休暇", "Libur perusahaan": "会社休日", "Contoh: Tahun Baru Imlek": "例: 旧正月", "Belum ada data libur untuk tahun ini. Tambahkan sesuai SKB 3 Menteri.": "今年の休日データがありません。政府通達（SKB）に従って追加してください。", "Tahun Baru 2026 Masehi": "2026年 元日", "Isra Mikraj Nabi Muhammad SAW": "イスラ・ミアラージュ（預言者ムハンマドの昇天）", "Cuti Bersama Tahun Baru Imlek": "旧正月の一斉休暇", "Tahun Baru Imlek 2577 Kongzili": "旧正月（春節）2577", "Cuti Bersama Hari Suci Nyepi": "ニュピの一斉休暇", "Hari Suci Nyepi (Tahun Baru Saka 1948)": "ニュピ（サカ暦新年 1948）", "Cuti Bersama Idulfitri": "イドゥルフィトリの一斉休暇", "Idulfitri 1447 H": "イドゥルフィトリ（断食明け大祭）1447H", "Wafat Yesus Kristus": "聖金曜日（キリスト受難日）", "Kebangkitan Yesus Kristus (Paskah)": "復活祭（イースター）", "Hari Buruh Internasional": "メーデー", "Kenaikan Yesus Kristus": "キリスト昇天祭", "Cuti Bersama Kenaikan Yesus Kristus": "昇天祭の一斉休暇", "Iduladha 1447 H": "イドゥルアドハー（犠牲祭）1447H", "Cuti Bersama Iduladha": "犠牲祭の一斉休暇", "Hari Raya Waisak 2570": "ワイサック（仏誕祭）2570", "Hari Lahir Pancasila": "パンチャシラの日", "Tahun Baru Islam 1448 H": "イスラム暦新年 1448H", "Proklamasi Kemerdekaan RI": "インドネシア独立記念日", "Maulid Nabi Muhammad SAW": "預言者ムハンマド生誕祭", "Cuti Bersama Natal": "クリスマスの一斉休暇", "Kelahiran Yesus Kristus (Natal)": "クリスマス", "+ Tambah user": "+ ユーザー追加", "Nama": "氏名", "Peran": "権限", "Sandi": "パスワード", "Tambah user": "ユーザーを追加", "Ubah user": "ユーザーを編集", "Nama lengkap": "氏名", "Tahun masuk": "入社年", "Tanggal lahir": "生年月日", "No. HP": "電話番号", "Email": "メール", "Simpan user": "ユーザーを保存", "Min. 8, huruf & angka": "8文字以上、英字と数字", "Kata sandi (kosongkan jika tidak diubah)": "パスワード（変更しない場合は空欄）", "Tidak ada user yang cocok.": "該当するユーザーがいません。", "Satu kepala divisi menyetujui semua divisi dalam kelompoknya. Atur kepala divisi di Kelola User.": "1人の部門長がグループ内の全部署を承認します。部門長はユーザー管理で設定します。", "Kelompok persetujuan": "承認グループ", "Kepala divisi": "部門長", "Belum ada": "未設定", "Jumlah lembur": "残業回数", "Total jam": "合計時間", "Tidak ada pegawai yang cocok.": "該当する従業員がいません。", "Satpam": "警備", "Operasional": "運営", "Dokumen": "書類", "Perekrutan": "採用", "Sensei": "先生", "Catatan pribadi, hanya Anda yang bisa melihatnya.": "個人用メモです。あなただけが閲覧できます。", "Tugas": "タスク", "Memo": "メモ", "Semua tugas": "すべてのタスク", "Belum selesai": "未完了", "Selesai": "完了", "Proses": "進行中", "Baru": "新規", "Cari catatan…": "メモを検索…", "Tandai selesai": "完了にする", "Keterangan (opsional)": "内容（任意）", "Prioritas": "優先度", "Tenggat (opsional)": "期限（任意）", "Isi memo": "メモ内容", "Belum ada tugas. Catat pekerjaan yang harus diselesaikan.": "タスクはまだありません。やるべき作業を記録しましょう。", "Belum ada memo. Tulis catatan singkat pekerjaan Anda.": "メモはまだありません。業務の簡単なメモを書きましょう。", "Pesan tersimpan terenkripsi dan tidak ditampilkan di spreadsheet.": "メッセージは暗号化されて保存され、スプレッドシートには表示されません。", "Pilih kontak": "連絡先を選択", "Belum ada percakapan dipilih": "会話が選択されていません", "Pilih nama di daftar untuk mulai mengobrol.": "リストから名前を選んでチャットを始めましょう。", "Belum ada pesan": "メッセージはまだありません", "Sapa duluan.": "最初に挨拶してみましょう。", "Tulis pesan…": "メッセージを入力…", "Terkirim": "送信済み", "Dibaca": "既読", "Mengirim…": "送信中…", "Tidak ditemukan.": "見つかりません。", "Pesan gagal terkirim": "メッセージを送信できませんでした", "Riwayat aktivitas 30 hari terakhir. Data yang lebih lama dihapus otomatis.": "直近30日間のアクティビティ履歴です。それ以前のデータは自動的に削除されます。", "Semua aksi": "すべての操作", "Waktu": "日時", "Pengguna": "ユーザー", "Detail": "詳細", "Cari pengguna atau detail…": "ユーザーまたは詳細を検索…", "Belum ada aktivitas.": "アクティビティはありません。", "Login": "ログイン", "Akun terkunci": "アカウントロック", "Ubah lembur": "残業編集", "Batalkan lembur": "残業取消", "Setujui lembur": "残業承認", "Tolak lembur": "残業却下", "Hapus lembur": "残業削除", "Hapus user": "ユーザー削除", "Hapus pengumuman": "お知らせ削除", "Hapus hari libur": "休日削除", "Lihat sandi": "パスワード閲覧", "Data profil": "プロフィール情報", "Tahun masuk Yonasindo": "Yonasindo入社年", "Nama, divisi, dan tahun masuk diubah oleh admin. Kata sandi juga hanya dapat diubah oleh admin.": "氏名・部署・入社年は管理者が変更します。パスワードも管理者のみ変更できます。", "Simpan profil": "プロフィールを保存", "Format 24 jam. Lembur boleh melewati tengah malam dan tanpa batas durasi.": "24時間表記。深夜0時をまたぐ残業や、時間制限なしの申請も可能です。", "Tanggal lembur": "残業日", "Jam mulai (00–23)": "開始時刻 (00–23)", "Jam selesai (00–23)": "終了時刻 (00–23)", "Pekerjaan yang dikerjakan": "作業内容", "Kirim pengajuan": "申請を送信", "Menit": "分", "Contoh: menyelesaikan laporan akhir bulan": "例: 月末レポートの作成", "Ubah pengajuan lembur": "残業申請を編集", "Hanya bisa diubah selama berstatus Menunggu.": "承認待ちの間のみ編集できます。", "Jam mulai": "開始時刻", "Jam selesai": "終了時刻", "Pekerjaan": "作業", "Simpan perubahan": "変更を保存", "Batalkan": "取消", "Salin": "コピー", "Hanya admin yang dapat melihat ini, dan setiap pelihatan tercatat di Log Aktivitas. Jaga kerahasiaannya.": "管理者のみ閲覧できます。閲覧はすべてアクティビティログに記録されます。機密として管理してください。", "Sesi berakhir, silakan login ulang": "セッションが切れました。再度ログインしてください。", "Sesi berakhir. Silakan login ulang.": "セッションが切れました。再度ログインしてください。", "Pengajuan terkirim": "申請を送信しました", "Pengajuan diperbarui": "申請を更新しました", "Lembur disetujui": "残業を承認しました", "Lembur ditolak": "残業を却下しました", "Lembur dihapus": "残業を削除しました", "User disimpan": "ユーザーを保存しました", "User dihapus": "ユーザーを削除しました", "Pengumuman terbit": "お知らせを公開しました", "Pengumuman dihapus": "お知らせを削除しました", "Catatan disimpan": "メモを保存しました", "Catatan dihapus": "メモを削除しました", "Profil disimpan": "プロフィールを保存しました", "Hari libur disimpan": "休日を保存しました", "Hari libur dihapus": "休日を削除しました", "Tersalin": "コピーしました", "Salin manual": "手動でコピーしてください", "PDF diunduh": "PDFをダウンロードしました", "Tidak ada data untuk diunduh": "ダウンロードするデータがありません", "Keluar otomatis karena tidak aktif": "操作がないため自動的にログアウトしました", "Akun Anda sudah dihapus admin": "アカウントが管理者により削除されました", "Gagal": "失敗しました", "Username atau kata sandi salah.": "ユーザー名またはパスワードが違います。", "Terlalu banyak percobaan gagal. Coba lagi dalam 15 menit.": "失敗回数が多すぎます。15分後にもう一度お試しください。", "Tidak diizinkan.": "許可されていません。", "Bukan wewenang Anda.": "あなたの権限外です。", "Pengajuan ini sudah diputuskan.": "この申請はすでに処理されています。", "Alasan penolakan wajib diisi.": "却下の理由は必須です。", "Pengajuan dengan tanggal dan jam yang sama sudah ada.": "同じ日付・時間の申請がすでにあります。", "Jam selesai tidak boleh sama dengan jam mulai.": "終了時刻は開始時刻と同じにできません。", "Tanggal lembur tidak boleh di masa depan.": "残業日に未来の日付は指定できません。", "Data pengajuan tidak lengkap atau tidak valid.": "申請内容が不完全または無効です。", "Username sudah dipakai.": "このユーザー名はすでに使われています。", "Kata sandi minimal 8 karakter dan mengandung huruf serta angka.": "パスワードは8文字以上で、英字と数字を含めてください。", "Kelompok divisi ini sudah punya kepala divisi.": "このグループにはすでに部門長がいます。", "Harus ada minimal satu admin.": "管理者は最低1人必要です。", "Hanya admin yang dapat melihat kata sandi.": "パスワードを閲覧できるのは管理者のみです。", "Kata sandi user ini belum tersimpan. Atur ulang lewat Ubah user agar bisa dilihat.": "このユーザーのパスワードは未保存です。「ユーザーを編集」で再設定すると閲覧できます。", "Aplikasi belum dihubungkan ke server (API_URL kosong).": "アプリがサーバーに接続されていません（API_URLが空です）。", "Tidak bisa menghubungi server. Periksa koneksi internet dan API_URL.": "サーバーに接続できません。インターネット接続とAPI_URLを確認してください。", "Pesan tidak valid.": "メッセージが無効です。", "Judul dan isi pengumuman wajib diisi.": "お知らせのタイトルと内容は必須です。", "Alasan penolakan (wajib diisi):": "却下の理由（必須）:", "Batalkan pengajuan ini?": "この申請を取り消しますか？", "Hapus user ini beserta data lemburnya?": "このユーザーと残業データを削除しますか？", "Hapus pengumuman ini?": "このお知らせを削除しますか？", "Hapus catatan ini?": "このメモを削除しますか？", "Hapus hari libur ini?": "この休日を削除しますか？"};
+const dj=s=>JA[s]||s,djl=s=>s.replace(/[^,·]+/g,w=>{const t=w.trim();return JA[t]?w.replace(t,JA[t]):w}),UN={' j':'時間',' hari':'日','x':'回'};
+const JAP=[
+ [/^Selamat (pagi|siang|sore|malam), (.+)$/,m=>({pagi:'おはようございます',siang:'こんにちは',sore:'こんにちは',malam:'こんばんは'}[m[1]])+'、'+m[2]+'さん'],
+ [/^([\d.,]+) j$/,m=>m[1]+'時間'],[/^([\d.,]+) jam$/,m=>m[1]+'時間'],[/^([\d.,]+) hari$/,m=>m[1]+'日'],[/^(\d+)x$/,m=>m[1]+'回'],
+ [/^\(bulan lalu ([\d.,]+)( j| hari|x)?\)$/,m=>'(先月 '+m[1]+(UN[m[2]||'']||'')+')'],
+ [/^▲ baru$/,()=>'▲ 新規'],[/^= sama$/,()=>'= 変わらず'],
+ [/^(\d+) orang · ([\d.,]+) j$/,m=>m[1]+'名 · '+m[2]+'時間'],
+ [/^Persetujuan \((\d+)\)$/,m=>'承認 ('+m[1]+')'],
+ [/^Menunggu keputusan Anda \((\d+)\)$/,m=>'承認待ち ('+m[1]+'件)'],
+ [/^Tenggat (.+?)( \(terlambat\))?$/,m=>'期限 '+m[1]+(m[2]?' (期限超過)':'')],
+ [/^(Tambah|Ubah) (tugas|memo)$/,m=>(m[2]==='tugas'?'タスク':'メモ')+'を'+(m[1]==='Tambah'?'追加':'編集')],
+ [/^\+ Tambah (tugas|memo)$/,m=>'+ '+(m[1]==='tugas'?'タスク':'メモ')+'追加'],
+ [/^Divisi (.+)$/,m=>'部署: '+djl(m[1])],
+ [/^(Administrator|Akunting|Kepala Divisi|Karyawan) · (.+)$/,m=>dj(m[1])+' · '+djl(m[2])],
+ [/^(.+) · (IT|Satpam|Akunting|Operasional|Dokumen|PIC|Perekrutan|Sensei)$/,m=>m[1]+' · '+dj(m[2])],
+ [/^Kelompok (\d) \((.+)\)$/,m=>'グループ'+m[1]+' ('+djl(m[2])+')'],
+ [/^Kelompok (\d): (.+)$/,m=>'グループ'+m[1]+': '+djl(m[2])],
+ [/^(.+) · Untuk: (.+)$/,m=>m[1]+' · 対象: '+(jaOf(m[2])||m[2])],
+ [/^Pengumuman ini dikirim ke seluruh pegawai divisi: (.+)\.$/,m=>'このお知らせは次の部署の全従業員に送信されます: '+djl(m[1])+'。'],
+ [/^Pengajuan dikirim ke kepala divisi untuk kelompok (.+)\. Masih bisa diubah selama berstatus Menunggu\.$/,m=>'申請は次のグループの部門長に送信されます: '+djl(m[1])+'。承認待ちの間は編集できます。'],
+ [/^Hanya lembur berstatus Disetujui(?: pada (.+))?\. Total:$/,m=>'承認済みの残業のみ'+(m[1]?'（'+m[1]+'）':'')+'。合計:'],
+ [/^Libur bulan ini: (.+)$/,m=>'今月の休日: '+m[1].split(' · ').map(x=>{const q=/^(\d+) (.+)$/.exec(x);return q?q[1]+'日 '+(JA[q[2]]||q[2]):x}).join(' · ')],
+ [/^Tanggal ini akhir pekan\. .*$/,()=>'この日は週末です。残業は申請でき、休日残業として記録されます。'],
+ [/^Tanggal ini hari libur \((.+)\)\. .*$/,m=>'この日は休日（'+(JA[m[1]]||m[1])+'）です。残業は申請でき、休日残業として記録されます。'],
+ [/^((?:✓✓? )?)Anda: (.*)$/,m=>m[1]+'あなた: '+m[2]],
+ [/^Kata sandi (.+)$/,m=>m[1]+' さんのパスワード'],
+ [/^Username: (.+)$/,m=>'ユーザー名: '+m[1]],
+ [/^Hapus lembur (.+)$/,m=>'残業削除 '+m[1]]
+];
+const T=s=>LANG==='ja'?(JA[s]||trp(s)||s):s;
+function trp(s){for(const[re,f]of JAP){const m=re.exec(s);if(m)return f(m)}return null}
+const jaOf=k=>JA[k]||trp(k);
+function trNode(n){const p=n.parentNode;if(!p||/^(SCRIPT|STYLE|TEXTAREA)$/.test(p.nodeName)||(p.closest&&p.closest('.msg,.memo p,.an p,[data-nt]')))return;
+ const v=n.nodeValue,k=v.trim();if(!k)return;const r=jaOf(k);if(!r)return;
+ if(p.nodeName==='OPTION'&&!p.hasAttribute('value'))p.setAttribute('value',k);
+ if(n.__o===undefined)n.__o=v;n.nodeValue=v.replace(k,()=>r)}
+function trEl(el){['placeholder','title','aria-label','alt','data-l'].forEach(a=>{if(el.hasAttribute&&el.hasAttribute(a)){const v=el.getAttribute(a),r=jaOf(v.trim());if(r){(el.__oa=el.__oa||{})[a]=v;el.setAttribute(a,r)}}})}
+function trAll(root){if(LANG!=='ja')return;if(root.nodeType===3){trNode(root);return}if(root.nodeType!==1)return;
+ const tw=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let n;while(n=tw.nextNode())trNode(n);trEl(root);root.querySelectorAll('[placeholder],[title],[aria-label],[alt],[data-l]').forEach(trEl)}
+function trRestore(){const tw=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);let n;while(n=tw.nextNode())if(n.__o!==undefined){n.nodeValue=n.__o;delete n.__o}
+ document.querySelectorAll('*').forEach(el=>{if(el.__oa){for(const a in el.__oa)el.setAttribute(a,el.__oa[a]);delete el.__oa}})}
+function setLang(l,save){LANG=l;LOC=l==='ja'?'ja-JP':'id-ID';document.documentElement.lang=l==='ja'?'ja':'id';if(save)try{localStorage.setItem('yonas_lang',l)}catch(e){}
+ document.querySelectorAll('.lng').forEach(b=>b.textContent=l==='ja'?'ID':'日本語');
+ if(l==='ja')trAll(document.body);else trRestore();if(save&&ME)go(PAGE)}
+function toggleLang(){setLang(LANG==='ja'?'id':'ja',1)}
+new MutationObserver(ms=>{if(LANG!=='ja')return;for(const m of ms)m.addedNodes.forEach(trAll)}).observe(document.body,{childList:true,subtree:true});
+setLang(LANG);
 setTheme(document.documentElement.dataset.theme||'light');
 init();
 </script>
