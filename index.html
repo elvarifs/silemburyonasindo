@@ -2,8 +2,9 @@
 <html lang="id">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src data:; connect-src https://script.google.com https://script.googleusercontent.com; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://script.google.com https://script.googleusercontent.com; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
+<link rel="icon" href="logo.png">
 <script src="config.js"></script>
 <script>try{var t=localStorage.getItem("yonas_theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.documentElement.dataset.theme=t}catch(e){}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -111,6 +112,16 @@ table.rs thead{display:none}table.rs tr{display:block;border:1px solid var(--lin
 table.rs td{display:flex;justify-content:space-between;gap:14px;border:0;padding:5px 10px;text-align:right}table.rs td::before{content:attr(data-l);font-weight:600;color:var(--mute);text-align:left;flex:none}
 .bar input,.bar select{flex:1;min-width:120px}.cell{min-height:54px;padding:5px}.chips{display:none}.dots{display:flex}.cal{gap:4px}
 .chat{grid-template-columns:1fr;height:calc(100dvh - 120px)}.chat .cconv{display:none}.chat.open .cconv{display:flex}.chat.open .clist{display:none}.cback{display:block}.msg{max-width:86%}}
+
+.brand img{height:42px;width:auto;border-radius:7px;flex:none}.l-left .brand{font-size:19px}.l-left .brand img{height:58px}
+.wm{font-size:11.5px;color:var(--mute);text-align:center;margin-top:30px;opacity:.85;line-height:1.4}.l-right .wm{position:absolute;bottom:14px;left:16px;right:16px;margin:0}
+.tag.lib{background:color-mix(in srgb,var(--no) 14%,transparent);color:var(--no);margin-left:6px;font-size:11px;padding:1px 8px}
+.dl{font-style:normal;font-size:12px;font-weight:700;padding:2px 8px;border-radius:99px;margin-left:8px;vertical-align:middle;white-space:nowrap}
+.dl.up{background:color-mix(in srgb,var(--wait) 18%,transparent);color:var(--wait)}.dl.down{background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}.dl.eq{background:var(--sf2);color:var(--mute)}
+.stat small{font-size:12px;color:var(--mute)}.stat .n{display:flex;align-items:center;flex-wrap:wrap}
+.cell.lib{background:color-mix(in srgb,var(--no) 10%,var(--sf2))}.cell.lib b,.cell.we b{color:var(--no)}.cell.td b{color:#fff!important}
+.cell small{display:block;font-size:10px;line-height:1.2;color:var(--no);margin-top:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:860px){.cell small{display:none}.l-right .wm{position:static;margin-top:22px}.l-right{align-content:center}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -119,7 +130,7 @@ table.rs td{display:flex;justify-content:space-between;gap:14px;border:0;padding
 
 <section id="login">
  <div class="l-left">
-  <div class="brand"><span class="bm">SL</span><div>PT Yonasindo Intra Pratama</div></div>
+  <div class="brand"><img src="logo.png" alt="Logo Yonasindo" onerror="this.remove()"><div>PT. Yonasindo Intra Pratama</div></div>
   <div><h1>SI LEMBUR YONASINDO</h1><p>Catat jam lembur, setujui per divisi, dan rekap lembur bulanan dalam satu tempat.</p></div>
   <ul><li>Pengajuan lembur dan kalender per tanggal</li><li>Persetujuan kepala divisi</li><li>Rekap bulanan yang bisa diunduh sebagai PDF</li></ul>
  </div>
@@ -129,11 +140,11 @@ table.rs td{display:flex;justify-content:space-between;gap:14px;border:0;padding
   <label for="p">Kata sandi</label><div class="pw"><input id="p" type="password" autocomplete="current-password" required><button type="button" class="eye" onclick="togglePw('p',this)">Lihat</button></div>
   <div class="err" id="lerr"></div><button class="btn full">Masuk</button>
   <div class="demo">Lupa kata sandi? Hubungi admin. Sesi berakhir otomatis jika tidak aktif 30 menit.</div>
- </form></div>
+ </form><p class="wm">Aplikasi Si Lembur Yonasindo ini dirancang dan dibuat oleh Elvari Faisal (Tim IT LPK YONASINDO)</p></div>
 </section>
 <div id="app" class="hide">
  <aside id="side"><button class="x" onclick="menu(false)">✕ Tutup</button>
-  <div class="brand"><span class="bm">SL</span><div>SI LEMBUR YONASINDO<small id="role"></small></div></div>
+  <div class="brand"><img src="logo.png" alt="Logo Yonasindo" onerror="this.remove()"><div>SI LEMBUR YONASINDO<small id="role"></small></div></div>
   <nav id="nav"></nav>
   <div class="me"><span class="av" id="mav"></span><div><b id="mn"></b><small id="md"></small></div></div>
  </aside>
@@ -141,6 +152,7 @@ table.rs td{display:flex;justify-content:space-between;gap:14px;border:0;padding
   <header class="top"><button id="burger" onclick="menu(true)" aria-label="Menu"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
    <div class="tt"><h2 id="title"></h2><div class="sub" id="sub"></div></div><button class="thm" type="button" onclick="toggleTheme()" aria-label="Ganti tema"></button></header>
   <div id="view"></div>
+  <footer class="wm">Aplikasi Si Lembur Yonasindo ini dirancang dan dibuat oleh Elvari Faisal (Tim IT LPK YONASINDO)</footer>
  </main>
 </div>
 <div id="ov" onclick="menu(false)"></div>
@@ -188,11 +200,11 @@ async function api(action,p={}){let t;
  try{t=await (await fetch(API_URL,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({...p,action,token:TOKEN})})).text()}catch(e){return{ok:false,error:'Tidak bisa menghubungi server. Periksa koneksi internet dan API_URL.'}}
  let x;try{x=JSON.parse(t)}catch(e){return{ok:false,error:'Server tidak mengembalikan data. Pastikan URL berakhiran /exec dan akses deployment "Anyone".'}}
  if(x.auth&&ME){ME=null;toast('Sesi berakhir, silakan login ulang');setTimeout(logout,1200)}return x}
-async function refresh(){const x=await api('data');if(!x.ok)return x.error||'Gagal memuat data.';x.pengumuman=x.pengumuman||[];x.catatan=x.catatan||[];x.log=x.log||[];DB=x;ME=x.me;return ''}
+async function refresh(){const x=await api('data');if(!x.ok)return x.error||'Gagal memuat data.';x.pengumuman=x.pengumuman||[];x.catatan=x.catatan||[];x.log=x.log||[];x.libur=x.libur||[];DB=x;ME=x.me;return ''}
 async function act(action,p,msg){const x=await api(action,p);if(!x.ok){toast(x.error||'Gagal');return false}const m=await refresh();if(m){toast(m);return false}if(msg)toast(msg);return true}
 const RL={admin:'Administrator',kadiv:'Kepala Divisi',karyawan:'Karyawan'};
 const MENU={
- admin:[['dash','Dashboard','grid'],['info','Pengumuman','mega'],['lembur','Semua Lembur','list'],['detail','Detail Pegawai','clip'],['kalender','Kalender Lembur','cal'],['users','Kelola User','users'],['divisi','Divisi & Persetujuan','layers'],['laporan','Rekap Jam Lembur','chart'],['catatan','Catatan Kerja','note'],['chat','Chat','chat'],['log','Log Aktivitas','activity'],['profil','Profil Saya','user']],
+ admin:[['dash','Dashboard','grid'],['info','Pengumuman','mega'],['lembur','Semua Lembur','list'],['detail','Detail Pegawai','clip'],['kalender','Kalender Lembur','cal'],['libur','Hari Libur','flag'],['users','Kelola User','users'],['divisi','Divisi & Persetujuan','layers'],['laporan','Rekap Jam Lembur','chart'],['catatan','Catatan Kerja','note'],['chat','Chat','chat'],['log','Log Aktivitas','activity'],['profil','Profil Saya','user']],
  kadiv:[['dash','Dashboard','grid'],['info','Pengumuman','mega'],['approve','Persetujuan Lembur','check'],['riwayat','Riwayat Lembur','clock'],['detail','Detail Pegawai','clip'],['tim','Rekap Jam Pegawai','chart'],['kalender','Kalender Lembur','cal'],['catatan','Catatan Kerja','note'],['chat','Chat','chat'],['profil','Profil Saya','user']],
  karyawan:[['dash','Dashboard','grid'],['info','Pengumuman','mega'],['ajukan','Ajukan Lembur','plus'],['saya','Riwayat Lembur','clock'],['kalender','Kalender Lembur','cal'],['catatan','Catatan Kerja','note'],['chat','Chat','chat'],['profil','Profil Saya','user']]};
 function start(){$('#login').classList.add('hide');$('#app').classList.remove('hide');
@@ -213,12 +225,16 @@ function tbl(cols,rows,empty='Belum ada data.'){
 const scope=()=>DB.lembur.filter(l=>ME.role==='admin'||(ME.role==='kadiv'&&grupOf(ME.divisi).includes(U(l.uid).divisi))||(ME.role==='karyawan'&&l.uid===ME.id)).sort((a,b)=>b.tgl.localeCompare(a.tgl));
 const scopeUsers=()=>DB.users.filter(u=>u.role==='karyawan'&&(ME.role==='admin'||grupOf(ME.divisi).includes(u.divisi)));
 const sum=a=>Math.round(a.reduce((s,l)=>s+l.jam,0)*100)/100;
-const sc=(i,l,v,c)=>`<div class="stat" style="--c:${c}"><span class="ic">${ic(i)}</span><div><div class="n">${v}</div><span>${l}</span></div></div>`;
-const stats=a=>{const tm=today().slice(0,7),ok=a.filter(l=>l.status==='Disetujui');return`<div class="stats">${sc('list','Total pengajuan',a.length,'var(--g1)')}${sc('clock','Menunggu persetujuan',a.filter(l=>l.status==='Menunggu').length,'var(--wait)')}${sc('activity','Jam lembur bulan ini',sum(ok.filter(l=>l.tgl.slice(0,7)===tm))+' j','var(--ok)')}${sc('cal','Total jam disetujui',sum(ok)+' j','var(--g1)')}</div>`};
+const sc=(i,l,v,c,x='')=>`<div class="stat" style="--c:${c}"><span class="ic">${ic(i)}</span><div><div class="n">${v}${x}</div><span>${l}</span></div></div>`;
+const mo=n=>{const d=new Date();d.setDate(1);d.setMonth(d.getMonth()+n);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')};
+const dl=(c,p)=>!c&&!p?'':!p?'<em class="dl up">▲ baru</em>':c===p?'<em class="dl eq">= sama</em>':`<em class="dl ${c>p?'up':'down'}">${c>p?'▲':'▼'} ${Math.abs(Math.round((c-p)/p*100))}%</em>`;
+const trd=(i,l,c,p,u,col)=>sc(i,l+` <small>(bulan lalu ${p}${u})</small>`,c+u,col,dl(c,p));
+const stats=a=>{const m0=mo(0),m1=mo(-1),inM=(x,m)=>x.filter(l=>l.tgl.slice(0,7)===m),ok=a.filter(l=>l.status==='Disetujui'),lib=x=>x.filter(l=>l.status!=='Ditolak'&&libur(l.tgl)).length,dd=x=>new Set(x.map(l=>l.tgl)).size;
+ return`<div class="stats">${trd('list','Pengajuan bulan ini',inM(a,m0).length,inM(a,m1).length,'','var(--g1)')}${trd('activity','Jam lembur bulan ini',sum(inM(ok,m0)),sum(inM(ok,m1)),' j','var(--ok)')}${trd('cal','Hari lembur bulan ini',dd(inM(ok,m0)),dd(inM(ok,m1)),' hari','var(--g1)')}${trd('flag','Lembur di hari libur',lib(inM(a,m0)),lib(inM(a,m1)),'x','var(--no)')}${sc('clock','Menunggu persetujuan',a.filter(l=>l.status==='Menunggu').length,'var(--wait)')}</div>`};
 const HA=['Karyawan','Divisi','Tanggal','Jam','Durasi','Keterangan'];
 const HM=['Tanggal','Jam','Durasi','Keterangan','Status',''];
 function lrow(l,mode){const u=U(l.uid);
- const base=[tgl(l.tgl),l.mulai+' – '+l.selesai,l.jam+' jam',esc(l.ket)];
+ const base=[tgl(l.tgl)+lbadge(l.tgl),l.mulai+' – '+l.selesai,l.jam+' jam',esc(l.ket)];
  const st=tag(l.status)+(l.catatan?`<div class="note">${esc(l.catatan)}</div>`:'');
  if(mode==='act')return[esc(u.nama),u.divisi,...base,`<div class="acts"><button class="btn sm ok" onclick="decide(${l.id},'Disetujui')">Setujui</button><button class="btn sm no" onclick="decide(${l.id},'Ditolak')">Tolak</button></div>`];
  if(mode==='all')return[esc(u.nama),u.divisi,...base,st];
@@ -278,11 +294,11 @@ dash(){const a=scope(),ap=a.filter(l=>l.status==='Disetujui'),tm=today().slice(0
   +card('Pengumuman terbaru',pe.length?pe.map(p=>`<div class="an"><b>${esc(p.judul)}</b><div class="note">${esc(U(p.by).nama)} · ${wkt(p.ts)}</div><div>${esc(p.isi.slice(0,110))}${p.isi.length>110?'…':''}</div></div>`).join(''):'<div class="empty">Belum ada pengumuman.</div>',`<a class="lnk" onclick="go('info')">Lihat semua</a>`)
   +card('Tugas saya',tg.length?tg.map(c=>`<div class="an"><b>${esc(c.judul)}</b><div class="meta"><span class="tag P${c.prioritas}">${c.prioritas}</span>${c.tenggat?`<span class="${c.tenggat<today()?'late':''}">Tenggat ${tgl(c.tenggat)}</span>`:''}</div></div>`).join(''):'<div class="empty">Tidak ada tugas yang menunggu.</div>',`<a class="lnk" onclick="CT='tugas';go('catatan')">Buka catatan</a>`)+`</div>`;
  if(ME.role==='kadiv'){const p=a.filter(l=>l.status==='Menunggu');h+=`<div class="card"><h3>Menunggu keputusan Anda (${p.length})</h3>${tbl([...HA,'Aksi'],p.map(l=>lrow(l,'act')),'Tidak ada pengajuan yang menunggu.')}</div>`}
- if(ME.role==='karyawan')h+=`<div class="card"><div class="bar"><h3 class="grow">Pengajuan terakhir</h3><button class="btn ghost sm" onclick="go('saya')">Semua riwayat</button></div>${tbl(HM,a.slice(0,5).map(l=>lrow(l,'mine')),'Anda belum pernah mengajukan lembur.')}</div>`;
+ if(ME.role==='karyawan')h+=`<div id="calw">${calHtml()}</div>`;
  return h},
 ajukan(){const pd=PREDATE;PREDATE='';$('#sub').textContent='Format 24 jam. Lembur boleh melewati tengah malam dan tanpa batas durasi.';
  return`<div class="card" style="max-width:560px"><form onsubmit="return submitL(event)">
- <label for="lt">Tanggal lembur</label><input type="date" id="lt" required max="${today()}" value="${pd}">
+ <label for="lt">Tanggal lembur</label><input type="date" id="lt" required max="${today()}" value="${pd}" onchange="$('#lnote').innerHTML=lnoteHtml(this.value)"><div id="lnote" class="note" style="margin-top:6px">${lnoteHtml(pd)}</div>
  <div class="grid2"><div><label>Jam mulai (00–23)</label>${tsel('lm','17','00')}</div><div><label>Jam selesai (00–23)</label>${tsel('ls','19','00')}</div></div>
  <label for="lk">Pekerjaan yang dikerjakan</label><textarea id="lk" required maxlength="300" placeholder="Contoh: menyelesaikan laporan akhir bulan"></textarea>
  <div class="note" style="margin-top:6px">Pengajuan dikirim ke kepala divisi untuk kelompok ${esc(grupOf(ME.divisi).join(', '))}. Masih bisa diubah selama berstatus Menunggu.</div>
@@ -299,6 +315,9 @@ profil(){const x=ME,ro=(l,v)=>`<div><label>${l}</label><input value="${esc(v)}" 
  ${ro('Divisi',x.divisi)}${ro('Tahun masuk Yonasindo',x.masuk||'')}</div>
  <div class="note">Nama, divisi, dan tahun masuk diubah oleh admin. Kata sandi juga hanya dapat diubah oleh admin.</div>
  <button class="btn" style="margin-top:16px">Simpan profil</button></form></div>`},
+libur(){$('#sub').textContent='Kelola hari libur nasional, cuti bersama, dan libur perusahaan.';
+ const ys=[...new Set([...DB.libur.map(x=>x.tgl.slice(0,4)),today().slice(0,4)])].sort().reverse(),y=ys.includes(LY)?LY:today().slice(0,4),a=DB.libur.filter(x=>x.tgl.slice(0,4)===y).sort((p,q)=>p.tgl.localeCompare(q.tgl));
+ return`<div class="card"><div class="bar"><select onchange="LY=this.value;go('libur')">${ys.map(v=>`<option ${v===y?'selected':''}>${v}</option>`).join('')}</select><span class="grow note">Sabtu dan Minggu otomatis dianggap hari libur.</span><button class="btn" onclick="liburForm()">+ Tambah hari libur</button></div>${tbl(['Tanggal','Hari','Keterangan','Jenis',''],a.map(x=>[tgl(x.tgl),hari(x.tgl),esc(x.nama),`<span class="tag lib">${esc(x.tipe)}</span>`,`<button class="btn sm ghost" onclick="delLibur('${x.tgl}')">Hapus</button>`]),'Belum ada data libur untuk tahun ini. Tambahkan sesuai SKB 3 Menteri.')}</div>`},
 kalender(){$('#sub').textContent=ME.role==='karyawan'?'Lihat dan ajukan lembur berdasarkan tanggal.':'Sebaran lembur pegawai per tanggal.';return`<div id="calw">${calHtml()}</div>`},
 detail(){$('#sub').textContent='Rincian hari dan jam lembur setiap pegawai.';return`<div id="dv">${detHtml()}</div>`},
 log(){$('#sub').textContent='Riwayat aktivitas pengguna (300 terakhir).';return`<div class="card"><div class="bar"><input id="lq" type="search" placeholder="Cari pengguna atau detail…" oninput="logFill()"><select id="la" onchange="logFill()"><option value="">Semua aksi</option>${[...new Set(DB.log.map(x=>x.aksi))].sort().map(x=>`<option>${esc(x)}</option>`).join('')}</select></div><div id="lg"></div></div>`},
@@ -308,7 +327,7 @@ info(){const can=ME.role!=='karyawan',ps=DB.pengumuman.slice().sort((x,y)=>y.ts-
 catatan(){$('#sub').textContent='Catatan pribadi, hanya Anda yang bisa melihatnya.';
  return`<div class="card"><div class="tabs"><a class="${CT==='tugas'?'on':''}" onclick="CT='tugas';go('catatan')">Tugas</a><a class="${CT==='memo'?'on':''}" onclick="CT='memo';go('catatan')">Memo</a></div>
  <div class="bar"><input id="cqq" type="search" placeholder="Cari catatan…" oninput="catFill()">${CT==='tugas'?'<select id="cqs" onchange="catFill()"><option value="">Semua tugas</option><option value="open">Belum selesai</option><option value="done">Selesai</option></select>':''}<span class="grow"></span><button class="btn" onclick="catForm(0)">+ Tambah ${CT}</button></div><div id="cat"></div></div>`},
-chat(){$('#sub').textContent='Kirim pesan ke siapa saja di Yonasindo.';
+chat(){$('#sub').textContent='Pesan tersimpan terenkripsi dan tidak ditampilkan di spreadsheet.';
  return`<div class="chat ${PEER?'open':''}" id="chat"><div class="clist"><input id="cq" type="search" placeholder="Cari nama…" oninput="clist()"><div id="cl"></div></div>
  <div class="cconv"><div class="chead"><button class="btn sm ghost cback" onclick="PEER=null;go('chat')" aria-label="Kembali">‹</button><span id="cav"></span><div><b id="cn">Pilih kontak</b><small id="cr"></small></div></div><div id="cm"></div>
  <form class="cform" onsubmit="return send(event)"><input id="ct" placeholder="Tulis pesan…" autocomplete="off" maxlength="1000"><button class="btn">Kirim</button></form></div></div>`}
@@ -341,8 +360,8 @@ async function tick(){if(!ME)return;
  if(await refresh())return;
  $('#nav').innerHTML=navHtml(PAGE);
  if(PG[PAGE])fill();else if(PAGE==='chat'){clist();cmsg()}else if(PAGE==='catatan')catFill();else if(PAGE==='log')logFill();
- else if(['dash','divisi','info','kalender','detail'].includes(PAGE)){$('#view').innerHTML=V[PAGE]();if(PAGE==='dash')clock()}}
-setInterval(tick,8000);
+ else if(['dash','divisi','info','kalender','detail','libur'].includes(PAGE)){$('#view').innerHTML=V[PAGE]();if(PAGE==='dash')clock()}}
+setInterval(tick,15000);
 
 /* ---------- aksi form ---------- */
 
@@ -417,7 +436,7 @@ cal:'<rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 1
 chat:'<path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"/>',user:'<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',activity:'<path d="M22 12h-4l-3 9L9 3l-3 9H2"/>',
 clip:'<rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M9 12h6M9 16h4"/>',
 moon:'<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>',
-logout:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>',dl:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>'};
+logout:'<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/>',flag:'<path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/>',dl:'<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>'};
 const ic=n=>`<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICON[n]||''}</svg>`;
 function setTheme(t,save){document.documentElement.dataset.theme=t;if(save)try{localStorage.setItem('yonas_theme',t)}catch(e){}document.querySelectorAll('.thm').forEach(b=>b.innerHTML=ic(t==='dark'?'sun':'moon'))}
 function toggleTheme(){setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark',1)}
@@ -451,9 +470,9 @@ function calHtml(){const{y,m}=CAL,a=scope(),by={},nm=ME.role==='karyawan',first=
  a.forEach(l=>(by[l.tgl]=by[l.tgl]||[]).push(l));
  let cells=['Sen','Sel','Rab','Kam','Jum','Sab','Min'].map(x=>`<div class="wd">${x}</div>`).join('')+'<div></div>'.repeat(first);
  for(let d=1;d<=dim;d++){const k=y+'-'+pad(m+1)+'-'+pad(d),it=by[k]||[],hrs=sum(it.filter(l=>l.status!=='Ditolak'));
-  cells+=`<div class="cell ${k===t?'td':''} ${k===CAL.sel?'on':''}" onclick="calSel('${k}')"><b>${d}</b>${nm?`<span class="chips">${it.slice(0,2).map(l=>`<i class="chip st-${l.status}">${l.mulai}–${l.selesai}</i>`).join('')}${it.length>2?`<i class="chip">+${it.length-2}</i>`:''}</span>`:(it.length?`<span class="chips"><i class="chip cnt">${new Set(it.map(l=>l.uid)).size} orang · ${hrs} j</i></span>`:'')}<span class="dots">${it.slice(0,4).map(l=>`<u class="st-${l.status}"></u>`).join('')}</span></div>`}
- let p='';if(CAL.sel){const it=(by[CAL.sel]||[]).slice();p=`<div class="card"><div class="bar"><h3 class="grow">${hari(CAL.sel)}, ${tgl(CAL.sel)}</h3>${nm&&CAL.sel<=t?`<button class="btn sm" onclick="PREDATE='${CAL.sel}';go('ajukan')">${ic('plus')} Ajukan lembur</button>`:''}</div>${tbl(nm?HM:[...HA,'Status'],it.map(l=>lrow(l,nm?'mine':'all')),'Tidak ada lembur pada tanggal ini.')}</div>`}
- return`<div class="card"><div class="bar calh"><button class="btn sm ghost" onclick="calNav(-1)" aria-label="Bulan sebelumnya">‹</button><h3 class="grow" style="text-align:center">${bln(y+'-'+pad(m+1))}</h3><button class="btn sm ghost" onclick="calNav(1)" aria-label="Bulan berikutnya">›</button><button class="btn sm ghost" onclick="calNav(0)">Hari ini</button></div><div class="cal">${cells}</div><div class="note" style="margin-top:12px">Warna: <span class="tag Menunggu">Menunggu</span> <span class="tag Disetujui">Disetujui</span> <span class="tag Ditolak">Ditolak</span> · ketuk tanggal untuk melihat rincian.</div></div>`+p}
+  cells+=`<div class="cell ${k===t?'td':''} ${k===CAL.sel?'on':''} ${lc(k)}" title="${esc((libur(k)||{}).nama||'')}" onclick="calSel('${k}')"><b>${d}</b>${libur(k)&&libur(k).tipe!=='Akhir pekan'?`<small>${esc(libur(k).nama)}</small>`:''}${nm?`<span class="chips">${it.slice(0,2).map(l=>`<i class="chip st-${l.status}">${libur(l.tgl)?'★ ':''}${l.mulai}–${l.selesai}</i>`).join('')}${it.length>2?`<i class="chip">+${it.length-2}</i>`:''}</span>`:(it.length?`<span class="chips"><i class="chip cnt">${new Set(it.map(l=>l.uid)).size} orang · ${hrs} j</i></span>`:'')}<span class="dots">${it.slice(0,4).map(l=>`<u class="st-${l.status}"></u>`).join('')}</span></div>`}
+ let p='';if(CAL.sel){const it=(by[CAL.sel]||[]).slice();p=`<div class="card"><div class="bar"><h3 class="grow">${hari(CAL.sel)}, ${tgl(CAL.sel)} ${lbadge(CAL.sel,1)}</h3>${nm&&CAL.sel<=t?`<button class="btn sm" onclick="PREDATE='${CAL.sel}';go('ajukan')">${ic('plus')} Ajukan lembur</button>`:''}</div>${tbl(nm?HM:[...HA,'Status'],it.map(l=>lrow(l,nm?'mine':'all')),'Tidak ada lembur pada tanggal ini.')}</div>`}
+ return`<div class="card"><div class="bar calh"><button class="btn sm ghost" onclick="calNav(-1)" aria-label="Bulan sebelumnya">‹</button><h3 class="grow" style="text-align:center">${bln(y+'-'+pad(m+1))}</h3><button class="btn sm ghost" onclick="calNav(1)" aria-label="Bulan berikutnya">›</button><button class="btn sm ghost" onclick="calNav(0)">Hari ini</button></div><div class="cal">${cells}</div><div class="note" style="margin-top:12px">Warna: <span class="tag Menunggu">Menunggu</span> <span class="tag Disetujui">Disetujui</span> <span class="tag Ditolak">Ditolak</span> <span class="tag lib">Hari libur</span> ★ = lembur di hari libur · ketuk tanggal untuk melihat rincian.</div>${hlist(y,m)}</div>`+p}
 function calNav(d){if(!d){CAL.y=+today().slice(0,4);CAL.m=+today().slice(5,7)-1}else{CAL.m+=d;if(CAL.m<0){CAL.m=11;CAL.y--}if(CAL.m>11){CAL.m=0;CAL.y++}}CAL.sel='';$('#calw').innerHTML=calHtml()}
 function calSel(k){CAL.sel=CAL.sel===k?'':k;$('#calw').innerHTML=calHtml()}
 
@@ -466,8 +485,8 @@ function detHtml(){const{us,u,a}=detData(),ok=a.filter(l=>l.status==='Disetujui'
  return`<div class="card"><div class="bar"><select id="dp" onchange="DET.uid=+this.value;detRe()">${us.map(x=>`<option value="${x.id}" ${x.id===DET.uid?'selected':''}>${esc(x.nama)} · ${x.divisi}</option>`).join('')}</select>
  <select id="dm" onchange="DET.m=this.value;detRe()"><option value="">Semua bulan</option>${ms.map(m=>`<option value="${m}" ${m===DET.m?'selected':''}>${bln(m)}</option>`).join('')}</select><span class="grow"></span><button class="btn ghost" onclick="pdfPage()">${ic('dl')} Unduh PDF</button></div>
  <div class="prof">${av(u)}<div><b>${esc(u.nama)}</b><div class="note">Divisi ${u.divisi}${u.email?' · '+esc(u.email):''}${u.hp?' · '+esc(u.hp):''}</div></div></div>
- <div class="stats">${sc('cal','Hari lembur',days+' hari','var(--g1)')}${sc('activity','Total jam disetujui',tot+' j','var(--ok)')}${sc('chart','Rata-rata per hari',(days?Math.round(tot/days*100)/100:0)+' j','var(--g1)')}${sc('clock','Menunggu',a.filter(l=>l.status==='Menunggu').length,'var(--wait)')}</div>
- ${tbl(['Hari','Tanggal','Jam','Durasi','Keterangan','Status'],a.map(l=>[hari(l.tgl),tgl(l.tgl),l.mulai+' – '+l.selesai,l.jam+' jam',esc(l.ket),tag(l.status)+(l.catatan?`<div class="note">${esc(l.catatan)}</div>`:'')]),'Tidak ada lembur pada periode ini.')}</div>`}
+ <div class="stats">${sc('cal','Hari lembur',days+' hari','var(--g1)',detPrev()?dl(days,detPrev().days):'')}${sc('activity','Total jam disetujui',tot+' j','var(--ok)',detPrev()?dl(tot,detPrev().tot):'')}${sc('flag','Lembur di hari libur',a.filter(l=>l.status!=='Ditolak'&&libur(l.tgl)).length+'x','var(--no)')}${sc('chart','Rata-rata per hari',(days?Math.round(tot/days*100)/100:0)+' j','var(--g1)')}${sc('clock','Menunggu',a.filter(l=>l.status==='Menunggu').length,'var(--wait)')}</div>
+ ${tbl(['Hari','Tanggal','Jam','Durasi','Keterangan','Status'],a.map(l=>[hari(l.tgl)+lbadge(l.tgl),tgl(l.tgl),l.mulai+' – '+l.selesai,l.jam+' jam',esc(l.ket),tag(l.status)+(l.catatan?`<div class="note">${esc(l.catatan)}</div>`:'')]),'Tidak ada lembur pada periode ini.')}</div>`}
 function detRe(){$('#dv').innerHTML=detHtml()}
 function openDet(id){DET.uid=id;go('detail')}
 
@@ -483,13 +502,13 @@ function mkPdf(judul,sub,cols,rows,note){
  const wrap=(t,n)=>{const o=[];let l='';t.split(' ').forEach(w=>{while(w.length>n){if(l){o.push(l);l=''}o.push(w.slice(0,n));w=w.slice(n)}if((l+' '+w).trim().length>n){o.push(l);l=w}else l=(l+' '+w).trim()});if(l)o.push(l);return o.length?o:['']};
  const np=()=>{if(c)pages.push(c);c='';y=H-M};
  const th=()=>{c+=`0.1 0.29 0.2 rg ${M} ${y-15} ${tw} 19 re f 1 1 1 rg\n`;let x=M;cols.forEach((z,i)=>{c+=T(x+4,y-9,z[0],8.5,1);x+=cw[i]});c+='0 g\n';y-=19};
- np();c+=T(M,y-12,'SI LEMBUR YONASINDO',9,1)+T(M,y-30,judul,15,1)+T(M,y-45,sub,9.5)+T(M,y-58,'Dicetak: '+wkt(Date.now())+' '+hm(Date.now())+' WIB',8);y-=74;th();
+ np();c+=T(M,y-12,'PT. YONASINDO INTRA PRATAMA - SI LEMBUR',9,1)+T(M,y-30,judul,15,1)+T(M,y-45,sub,9.5)+T(M,y-58,'Dicetak: '+wkt(Date.now())+' '+hm(Date.now())+' WIB',8);y-=74;th();
  rows.forEach((r,ri)=>{const ls=r.map((t,i)=>wrap(String(t).replace(/\s+/g,' ').trim(),Math.max(3,Math.floor((cw[i]-8)/4.3)))),rh=Math.max(...ls.map(l=>l.length))*11+6;
   if(y-rh<M+24){np();th()}
   if(ri%2===0)c+=`0.94 0.96 0.93 rg ${M} ${y-rh} ${tw} ${rh} re f 0 g\n`;
   let x=M;ls.forEach((l,i)=>{l.forEach((t,j)=>{c+=T(x+4,y-10-j*11,t,8.5)});x+=cw[i]});y-=rh});
  if(note){if(y-30<M+24){np()}c+=T(M,y-18,note,9.5,1)}
- np();const n=pages.length;pages.forEach((p,i)=>{pages[i]=p+T(M,20,'SI LEMBUR YONASINDO',7.5)+T(W-M-62,20,'Halaman '+(i+1)+'/'+n,7.5)});
+ np();const n=pages.length;pages.forEach((p,i)=>{pages[i]=p+T(M,20,'Aplikasi Si Lembur Yonasindo - dirancang dan dibuat oleh Elvari Faisal (Tim IT LPK YONASINDO)',6.5)+T(W-M-62,20,'Halaman '+(i+1)+'/'+n,7.5)});
  const ob=['<</Type/Catalog/Pages 2 0 R>>',`<</Type/Pages/Kids[${pages.map((_,i)=>(6+2*i)+' 0 R').join(' ')}]/Count ${n}>>`,'<</Type/Font/Subtype/Type1/BaseFont/Helvetica/Encoding/WinAnsiEncoding>>','<</Type/Font/Subtype/Type1/BaseFont/Helvetica-Bold/Encoding/WinAnsiEncoding>>'];
  pages.forEach((p,i)=>{ob.push(`<</Length ${p.length}>>\nstream\n${p}endstream`);ob.push(`<</Type/Page/Parent 2 0 R/MediaBox[0 0 ${W} ${H}]/Contents ${5+2*i} 0 R/Resources<</Font<</F1 3 0 R/F2 4 0 R>>>>>>`)});
  let out='%PDF-1.4\n';const off=[];ob.forEach((o,i)=>{off.push(out.length);out+=`${i+1} 0 obj\n${o}\nendobj\n`});
@@ -499,7 +518,7 @@ const slug=t=>String(t).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/
 function flt(){const v=i=>($(i)?.value||''),q=v('#fq').toLowerCase(),m=v('#fm'),st=v('#fs'),d=v('#fd');
  return{q,m,st,d,a:scope().filter(l=>(!m||l.tgl.slice(0,7)===m)&&(!st||l.status===st)&&(!d||U(l.uid).divisi===d)&&(!q||U(l.uid).nama.toLowerCase().includes(q)))}}
 function pdfPage(){const f=flt(),mm=m=>m?bln(m):'Semua periode',asc=(x,y)=>x.tgl.localeCompare(y.tgl)||x.mulai.localeCompare(y.mulai);
- const dr=l=>[hari(l.tgl),tgl(l.tgl),l.mulai+' - '+l.selesai,l.jam+' jam',l.ket,l.status+(l.catatan?' ('+l.catatan+')':'')],dc=[['Hari',55],['Tanggal',70],['Jam',70],['Durasi',45],['Keterangan',190],['Status',85]];
+ const dr=l=>[hari(l.tgl)+(libur(l.tgl)?' (Libur)':''),tgl(l.tgl),l.mulai+' - '+l.selesai,l.jam+' jam',l.ket,l.status+(l.catatan?' ('+l.catatan+')':'')],dc=[['Hari',78],['Tanggal',68],['Jam',66],['Durasi',42],['Keterangan',170],['Status',85]];
  let j,sb,cols,rows,note='',nm='lembur';
  if(PAGE==='detail'){const{u,a}=detData();if(!u)return toast('Pilih pegawai dulu');const ok=a.filter(l=>l.status==='Disetujui');j='Rincian Lembur Pegawai';sb=u.nama+' - Divisi '+u.divisi+' - '+mm(DET.m);cols=dc;rows=a.map(dr);note='Total disetujui: '+sum(ok)+' jam ('+new Set(ok.map(l=>l.tgl)).size+' hari)';nm+='-'+slug(u.nama)+'-'+(DET.m||'semua')}
  else if(PAGE==='saya'){const a=f.a.slice().sort(asc),ok=a.filter(l=>l.status==='Disetujui');j='Riwayat Lembur';sb=ME.nama+' - Divisi '+ME.divisi+' - '+mm(f.m);cols=dc;rows=a.map(dr);note='Total disetujui: '+sum(ok)+' jam ('+new Set(ok.map(l=>l.tgl)).size+' hari)';nm+='-'+(f.m||'semua')}
@@ -507,10 +526,21 @@ function pdfPage(){const f=flt(),mm=m=>m?bln(m):'Semua periode',asc=(x,y)=>x.tgl
   rows=us.map(u=>{const x=f.a.filter(l=>l.uid===u.id&&l.status==='Disetujui');return[u.nama,u.divisi,x.length+'x',new Set(x.map(l=>l.tgl)).size+' hari',sum(x)+' jam']});
   j='Rekap Jam Lembur Pegawai';sb=(f.d?'Divisi '+f.d:'Semua divisi')+' - '+mm(f.m)+' (lembur disetujui)';cols=[['Pegawai',150],['Divisi',90],['Jumlah',60],['Hari lembur',80],['Total jam',80]];
   note='Total: '+sum(f.a.filter(l=>l.status==='Disetujui'&&us.some(u=>u.id===l.uid)))+' jam';nm='rekap-lembur-'+(f.m||'semua')}
- else{const a=f.a.slice().sort(asc);j='Daftar Lembur';sb=mm(f.m)+(f.d?' - Divisi '+f.d:'')+(f.st?' - '+f.st:'');cols=[['Pegawai',85],['Divisi',60],['Tanggal',70],['Jam',70],['Durasi',40],['Keterangan',130],['Status',60]];
-  rows=a.map(l=>[U(l.uid).nama,U(l.uid).divisi,tgl(l.tgl),l.mulai+' - '+l.selesai,l.jam+' jam',l.ket,l.status]);note='Total jam (disetujui): '+sum(a.filter(l=>l.status==='Disetujui'))+' jam';nm+='-'+(f.m||'semua')}
+ else{const a=f.a.slice().sort(asc);j='Daftar Lembur';sb=mm(f.m)+(f.d?' - Divisi '+f.d:'')+(f.st?' - '+f.st:'');cols=[['Pegawai',85],['Divisi',58],['Tanggal',92],['Jam',66],['Durasi',40],['Keterangan',105],['Status',62]];
+  rows=a.map(l=>[U(l.uid).nama,U(l.uid).divisi,tgl(l.tgl)+(libur(l.tgl)?' (Libur)':''),l.mulai+' - '+l.selesai,l.jam+' jam',l.ket,l.status]);note='Total jam (disetujui): '+sum(a.filter(l=>l.status==='Disetujui'))+' jam';nm+='-'+(f.m||'semua')}
  if(!rows.length)return toast('Tidak ada data untuk diunduh');
  const u=URL.createObjectURL(mkPdf(j,sb,cols,rows,note)),el=document.createElement('a');el.href=u;el.download=nm+'.pdf';document.body.append(el);el.click();el.remove();setTimeout(()=>URL.revokeObjectURL(u),5000);toast('PDF diunduh')}
+/* ---------- hari libur ---------- */
+let LY='';const _lb={};
+function libur(d){if(_lb.d!==DB){_lb.d=DB;_lb.m={};DB.libur.forEach(x=>_lb.m[x.tgl]=x)}if(_lb.m[d])return _lb.m[d];const w=new Date(d+'T00:00').getDay();return w===0||w===6?{nama:w===0?'Hari Minggu':'Hari Sabtu',tipe:'Akhir pekan'}:null}
+const lc=k=>{const x=libur(k);return x?(x.tipe==='Akhir pekan'?'we':'lib'):''};
+const lbadge=(d,full)=>{const x=libur(d);return x?`<span class="tag lib" title="${esc(x.nama)}">${x.tipe==='Akhir pekan'?'Akhir pekan':full?esc(x.nama):'Libur'}</span>`:''};
+const lnoteHtml=d=>{const x=d&&libur(d);return x?`Tanggal ini ${x.tipe==='Akhir pekan'?'akhir pekan':'hari libur ('+esc(x.nama)+')'}. Lembur tetap bisa diajukan dan akan ditandai sebagai lembur hari libur.`:''};
+const hlist=(y,m)=>{const k=y+'-'+String(m+1).padStart(2,'0'),a=DB.libur.filter(x=>x.tgl.slice(0,7)===k);return a.length?`<div class="note" style="margin-top:8px">Libur bulan ini: ${a.map(x=>+x.tgl.slice(8)+' '+esc(x.nama)).join(' · ')}</div>`:''};
+function detPrev(){if(!DET.m)return null;const d=new Date(DET.m+'-01T00:00');d.setMonth(d.getMonth()-1);const pm=d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'),a=scope().filter(l=>l.uid===DET.uid&&l.status==='Disetujui'&&l.tgl.slice(0,7)===pm);return{tot:sum(a),days:new Set(a.map(l=>l.tgl)).size}}
+function liburForm(){openM(`<h3>Tambah hari libur</h3><form onsubmit="return saveLibur(event)"><label for="lx">Tanggal</label><input type="date" id="lx" required><label for="ln">Keterangan</label><input id="ln" maxlength="60" required placeholder="Contoh: Tahun Baru Imlek"><label for="lj">Jenis</label><select id="lj"><option>Libur nasional</option><option>Cuti bersama</option><option>Libur perusahaan</option></select><div class="mact"><button type="button" class="btn ghost" onclick="closeM()">Batal</button><button class="btn">Simpan</button></div></form>`)}
+async function saveLibur(e){e.preventDefault();if(await act('addLibur',{tgl:$('#lx').value,nama:$('#ln').value.trim(),tipe:$('#lj').value},'Hari libur disimpan')){closeM();go('libur')}return false}
+async function delLibur(t){if(!confirm('Hapus hari libur ini?'))return;if(await act('delLibur',{tgl:t},'Hari libur dihapus'))go('libur')}
 setTheme(document.documentElement.dataset.theme||'light');
 init();
 </script>
